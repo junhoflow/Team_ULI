@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00B050"
+    android:orientation="vertical"
+    tools:context=".LeaderActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF">
+
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
+            android:layout_gravity="left"
+            android:layout_weight="1"
+            android:paddingTop="5dp"
+            android:stateListAnimator="@null"
+            app:backgroundTint="#FFFFFF"
+            app:icon="@drawable/ic_baseline_person_24"
+            app:iconTint="#51000000" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="250dp"
+            android:layout_height="76dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/whale_leader_title" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:paddingTop="5dp"
+            android:stateListAnimator="@null"
+            app:backgroundTint="#FFFFFF"
+            app:icon="@drawable/ic_baseline_home_24"
+            app:iconTint="#51000000" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:id="@+id/arrow"
+                android:layout_width="108dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingLeft="15dp"
+                android:paddingTop="20dp"
+                android:text="►"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/UserName"
+                android:layout_width="112dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingTop="20dp"
+                android:text="준호"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/follower_list"
+                android:layout_width="423dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="20dp"
+                android:text="님의 Followers 리스트"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+            
+            
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/adding1"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="+"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            app:backgroundTint="#A9CCCACA" />
+        <Button
+            android:id="@+id/adding2"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="+"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:backgroundTint="#A9CCCACA" />
+
+        <Button
+            android:id="@+id/adding3"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:text="+"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:backgroundTint="#A9CCCACA" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="349dp"
+        android:layout_gravity="center"
+        android:background="@drawable/layout_round">
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
