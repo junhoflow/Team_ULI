@@ -324,7 +324,7 @@
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="2"
+                                        android:text="@string/ing_quest"
                                         android:textColor="#FF5722"
                                         android:textSize="9dp"
                                         android:textStyle="bold" />
@@ -364,7 +364,7 @@
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="2"
+                                        android:text="@string/ed_quest"
                                         android:textColor="#3C3C3C"
                                         android:textSize="9dp"
                                         android:textStyle="bold" />

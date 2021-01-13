@@ -4,4 +4,6 @@
     <string name="FirstProfileName">정현</string>
     <string name="nowTime">2021년 1월 22일 금요일</string>
     <string name="TotalQuestCount">6</string>
+    <string name="ing_quest">2</string>
+    <string name="ed_quest">2</string>
 </resources>

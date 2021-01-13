@@ -19,6 +19,7 @@
             android:layout_height="70dp"
             android:layout_weight="1"
             app:backgroundTint="@color/maincolor_blue"
+            android:stateListAnimator="@null"
             app:icon="@drawable/ic_baseline_person_24" />
 
         <ImageView
@@ -34,6 +35,7 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_weight="1"
+            android:stateListAnimator="@null"
             app:backgroundTint="@color/maincolor_blue"
             app:icon="@drawable/ic_baseline_home_24" />
     </LinearLayout>

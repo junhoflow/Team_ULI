@@ -6,7 +6,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.github.mikephil.charting.charts.LineChart
 
-
 class LeaderActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
