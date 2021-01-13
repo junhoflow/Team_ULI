@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Whale">
         <activity android:name=".ProfileInfoActivity"></activity>
-        <activity android:name=".LeaderActivity">
+        <activity android:name=".LeaderActivity"></activity>
         <activity android:name=".termandregulations"></activity>
         <activity android:name=".ActivityJoinMembership" />
         <activity android:name=".FollowerActivity"></activity>

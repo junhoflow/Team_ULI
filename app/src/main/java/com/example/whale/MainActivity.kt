@@ -23,13 +23,14 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this, "로그인이 안되었습니다", Toast.LENGTH_SHORT).show()
                 }
 
-
             }
 
         }
 
         //auth = FirebaseAuth.getInstance()
         btn_join.setOnClickListener {
+            val intent3 = Intent(this, LeaderActivity::class.java)
+            startActivity(intent3)
             loginUserId(btn_idforlogin.text.toString(), btn_pwforlogin.text.toString())
         }
 
