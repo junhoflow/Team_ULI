@@ -14,25 +14,35 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        fun loginUserId(email: String, password: String) {
+            FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
 
-        //auth = FirebaseAuth.getInstance()
-btn_join.setOnClickListener{
-    loginUserId(btn_idforlogin.text.toString(), btn_pwforlogin.text.toString())
-}
+                if (task.isSuccessful) {
+                    Toast.makeText(this, "로그인이 되었습니다", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, "로그인이 안되었습니다", Toast.LENGTH_SHORT).show()
+                }
 
 
-        btn_join2.setOnClickListener{
-            loginUserId(btn_idforlogin.text.toString(), btn_pwforlogin.text.toString())
+            }
 
         }
 
-        btn_forjoin.setOnClickListener{
+        //auth = FirebaseAuth.getInstance()
+        btn_join.setOnClickListener {
+            loginUserId(btn_idforlogin.text.toString(), btn_pwforlogin.text.toString())
+        }
 
+        btn_join2.setOnClickListener {
+            val intent2 = Intent(this, FollowerActivity::class.java)
+            startActivity(intent2)
+            loginUserId(btn_idforlogin.text.toString(), btn_pwforlogin.text.toString())
+        }
+
+        btn_forjoin.setOnClickListener {
             val intent = Intent(this, ActivityJoinMembership::class.java)
             startActivity(intent)
 
         }
-
-
     }
 }
