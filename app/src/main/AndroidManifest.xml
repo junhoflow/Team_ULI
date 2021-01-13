@@ -11,6 +11,7 @@
         android:theme="@style/Theme.Whale">
         <activity android:name=".termandregulations"></activity>
         <activity android:name=".ActivityJoinMembership" />
+        <activity android:name=".FollowerActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

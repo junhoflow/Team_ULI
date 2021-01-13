@@ -35,26 +35,4 @@ btn_join.setOnClickListener{
 
 
     }
-
-    fun loginUserId(email : String, password:String){
-        FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password).addOnCompleteListener{task ->
-
-            if(task.isSuccessful){
-                Toast.makeText(this, "로그인이 되었습니다",Toast.LENGTH_SHORT).show()
-            }else{
-                Toast.makeText(this, "로그인이 안되었습니다",Toast.LENGTH_SHORT).show()
-            }
-
-
-        }
-
-
-
-    }
-
 }
-
-
-
-
-
