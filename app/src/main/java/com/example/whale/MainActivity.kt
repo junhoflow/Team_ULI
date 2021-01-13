@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.activity_join_membership.*
 
-import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_login.wow
+import kotlinx.android.synthetic.main.activity_login.wow5
+import kotlinx.android.synthetic.main.activity_login.wow3
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     //var auth : FirebaseAuth? =null
@@ -17,13 +19,17 @@ class MainActivity : AppCompatActivity() {
 
 
         //auth = FirebaseAuth.getInstance()
+btn_join.setOnClickListener{
+    loginUserId(wow5.text.toString(), wow3.text.toString())
+}
 
-        btn_login.setOnClickListener{
-           loginUserId(login_id.text.toString(), login_pw.text.toString())
+
+        btn_join2.setOnClickListener{
+            loginUserId(wow5.text.toString(), wow3.text.toString())
 
         }
 
-        btn_joinmembership.setOnClickListener{
+        wow.setOnClickListener{
 
             val intent = Intent(this, ActivityJoinMembership::class.java)
             startActivity(intent)
