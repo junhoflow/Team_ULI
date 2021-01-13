@@ -2,4 +2,6 @@
     <string name="app_name">Whale</string>
     <string name="username">준호</string>
     <string name="FirstProfileName">정현</string>
+    <string name="nowTime">2021년 1월 22일 금요일</string>
+    <string name="TotalQuestCount">6</string>
 </resources>
