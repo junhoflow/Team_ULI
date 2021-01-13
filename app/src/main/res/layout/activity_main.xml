@@ -5,48 +5,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
+    tools:context=".MainActivity">
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:background="#00B050">
+        android:background="#61B8BB">
+
 
         <Button
-            android:id="@+id/button_profile"
-            android:layout_width="70dp"
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
             android:layout_height="70dp"
             android:layout_weight="1"
-            app:backgroundTint="#00B050"
-            app:icon="@drawable/ic_baseline_person_24" />
+            android:gravity="center"
+            app:backgroundTint="#61B8BB"
+            app:icon="@drawable/ic_baseline_person_24"
+            app:iconPadding="8dp"
+            app:iconTint="#FFFFFF" />
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="273dp"
-            android:layout_height="70dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:padding="7dp"
-            app:srcCompat="@drawable/whale_follower" />
+            app:srcCompat="@drawable/whalegraphic" />
 
         <Button
-            android:id="@+id/button_home"
-            android:layout_width="70dp"
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
             android:layout_height="70dp"
             android:layout_weight="1"
-            app:backgroundTint="#00B050"
+            app:backgroundTint="#61B8BB"
             app:icon="@drawable/ic_baseline_home_24" />
 
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:orientation="vertical">
 
-
-    </LinearLayout>
 
 
 </LinearLayout>
