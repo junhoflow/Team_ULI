@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.534"
         app:layout_constraintStart_toEndOf="@+id/btn_join"
-        app:layout_constraintTop_toBottomOf="@+id/wow" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_forjoin" />
 
     <Button
         android:id="@+id/btn_join"
@@ -33,7 +33,7 @@
         app:backgroundTint="#4295F2"
         app:layout_constraintEnd_toStartOf="@+id/btn_join2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wow" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_forjoin" />
 
     <TextView
         android:id="@+id/textView"
@@ -54,7 +54,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <EditText
-        android:id="@+id/wow3"
+        android:id="@+id/btn_pwforlogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="101dp"
@@ -71,7 +71,7 @@
         app:layout_constraintTop_toBottomOf="@+id/wow4" />
 
     <EditText
-        android:id="@+id/wow5"
+        android:id="@+id/btn_idforlogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
@@ -102,7 +102,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wow5" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_idforlogin" />
 
     <Button
         android:id="@+id/wow2"
@@ -116,12 +116,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wow3"
+        app:layout_constraintTop_toBottomOf="@+id/btn_pwforlogin"
         app:rippleColor="#00FFFFFF"
         style = "?android:borderlessButtonStyle"/>
 
     <Button
-        android:id="@+id/wow"
+        android:id="@+id/btn_forjoin"
         style="?android:borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
