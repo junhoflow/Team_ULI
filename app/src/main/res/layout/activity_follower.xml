@@ -11,14 +11,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:background="#00B050">
+        android:background="@color/maincolor_blue">
 
         <Button
             android:id="@+id/button_profile"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_weight="1"
-            app:backgroundTint="#00B050"
+            app:backgroundTint="@color/maincolor_blue"
             app:icon="@drawable/ic_baseline_person_24" />
 
         <ImageView
@@ -34,7 +34,7 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_weight="1"
-            app:backgroundTint="#00B050"
+            app:backgroundTint="@color/maincolor_blue"
             app:icon="@drawable/ic_baseline_home_24" />
     </LinearLayout>
 
@@ -53,6 +53,129 @@
             android:layout_height="100dp"
             android:layout_alignParentTop="true"
             android:background="@drawable/overlap_shape">
+            <!--1-1.겹처진거 안에 내용-->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/nowtime"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/nowTime"
+                    android:textColor="#000000"
+                    android:textSize="9sp" />
+
+                <LinearLayout
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/maincolor_blue">
+
+                    <TextView
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="완료한 칭찬"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="@string/TotalQuestCount"
+                        android:textColor="@color/maincolor_blue"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:text="건"
+                        android:textColor="@color/maincolor_blue"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_marginLeft="15dp"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/username"
+                        android:textColor="#000000"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="님,"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="오늘의 포인트 리스트를 달성하고"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="칭찬고래를 키워보세요!"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
         </LinearLayout>
 
         <!--2.칭찬고래-->
@@ -61,16 +184,14 @@
             android:layout_height="270dp"
             android:layout_marginTop="10dp"
             android:orientation="vertical">
-
             <TextView
                 android:id="@+id/txt_title_whale"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif"
-                android:text="▻칭찬고래"
+                android:text="▻ 칭찬고래"
                 android:textSize="14sp"
                 android:textStyle="bold" />
-
         </LinearLayout>
 
         <!--3.포인트리스트-->
@@ -84,14 +205,14 @@
                 android:id="@+id/txt_title_ptlist"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="▻포인트리스트"
+                android:text="▻ 포인트리스트"
                 android:textSize="14sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
-            <ListView
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
+                android:layout_height="match_parent"
+                android:id="@+id/PointList"/>
 
         </LinearLayout>
 
