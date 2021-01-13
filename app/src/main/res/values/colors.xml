@@ -15,7 +15,7 @@
     //<color name="colorAccent">#ededed</color>
     //<color name="colorWhite">#ededed</color>
     //<color name="colorDivision">#ededed</color>
-    //<color name="colorNavIcon">#ededed</color>
+    <color name="maincolor_blue">#4295F2</color>
 
 
     <color name="colorEmailSignIn">#009688</color>
