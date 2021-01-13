@@ -5,12 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_login.*
 
-class MainActivity : AppCompatActivity() {
+class activity_login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-
+        setContentView(R.layout.activity_login)
 
         btn_joinmembership.setOnClickListener{
 
@@ -18,6 +16,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
+
 
 
     }
