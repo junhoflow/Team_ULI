@@ -14,30 +14,38 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        fun loginUserId(email: String, password: String) {
+        fun loginUserId1(email: String, password: String) {
             FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
 
                 if (task.isSuccessful) {
                     Toast.makeText(this, "로그인이 되었습니다", Toast.LENGTH_SHORT).show()
+                    val intent3 = Intent(this, LeaderActivity::class.java)
+                    startActivity(intent3)
                 } else {
                     Toast.makeText(this, "로그인이 안되었습니다", Toast.LENGTH_SHORT).show()
                 }
-
             }
-
         }
 
-        //auth = FirebaseAuth.getInstance()
+        fun loginUserId2(email: String, password: String) {
+            FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
+
+                if (task.isSuccessful) {
+                    Toast.makeText(this, "로그인이 되었습니다", Toast.LENGTH_SHORT).show()
+                    val intent2 = Intent(this, FollowerActivity::class.java)
+                    startActivity(intent2)
+                } else {
+                    Toast.makeText(this, "로그인이 안되었습니다", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+
         btn_join.setOnClickListener {
-            val intent3 = Intent(this, LeaderActivity::class.java)
-            startActivity(intent3)
-            loginUserId(btn_idforlogin.text.toString(), btn_pwforlogin.text.toString())
+            loginUserId1(btn_idforlogin.text.toString(), btn_pwforlogin.text.toString())
         }
 
         btn_join2.setOnClickListener {
-            val intent2 = Intent(this, FollowerActivity::class.java)
-            startActivity(intent2)
-            loginUserId(btn_idforlogin.text.toString(), btn_pwforlogin.text.toString())
+            loginUserId2(btn_idforlogin.text.toString(), btn_pwforlogin.text.toString())
         }
 
         btn_forjoin.setOnClickListener {
