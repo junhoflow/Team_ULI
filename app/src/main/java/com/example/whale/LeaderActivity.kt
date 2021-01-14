@@ -41,6 +41,19 @@ class LeaderActivity : AppCompatActivity() {
             Toast.makeText(this, "Error!", Toast.LENGTH_SHORT).show()
         }
 
+        if (intent.hasExtra("new")) {
+            FirebaseFirestore.getInstance()
+                .collection("users")
+                .whereEqualTo("id", intent.getStringExtra("new"))
+                .addSnapshotListener() { querySnapshot, firebaseFireStoreException ->
+                    var map: Map<String, Any> =
+                        querySnapshot?.documents?.first()?.data as Map<String, Any>
+                    username_1.text = map["nickname"].toString()
+                } }
+        else {
+            Toast.makeText(this, "Error!", Toast.LENGTH_SHORT).show()
+        }
+
 
 
 

@@ -161,6 +161,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/username_1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/username"
@@ -214,9 +215,8 @@
 
                         <TextView
                             android:id="@+id/arrow"
-                            android:layout_width="149dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:paddingLeft="15dp"
                             android:paddingTop="10dp"
                             android:text="►"
@@ -226,10 +226,10 @@
 
                         <TextView
                             android:id="@+id/UserName"
-                            android:layout_width="153dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:paddingTop="10dp"
+                            android:layout_marginLeft="4dp"
                             android:text="@string/username"
                             android:textColor="#FFFFFF"
                             android:textSize="18sp"
@@ -237,9 +237,8 @@
 
                         <TextView
                             android:id="@+id/follower_list"
-                            android:layout_width="423dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:paddingTop="10dp"
                             android:text="님의 Followers 리스트"
                             android:textColor="#FFFFFF"
@@ -534,6 +533,38 @@
                     </LinearLayout>
                 </LinearLayout>
 
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/test1"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/test2"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/test3"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 

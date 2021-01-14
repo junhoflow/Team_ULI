@@ -6,4 +6,8 @@
     <string name="TotalQuestCount">6</string>
     <string name="ing_quest">2</string>
     <string name="ed_quest">2</string>
+    <string name="FirstProfileEmail">tikibird@naver.com</string>
+    <string name="test1">이메일</string>
+    <string name="test2">이름</string>
+    <string name="test3">패스워드</string>
 </resources>
