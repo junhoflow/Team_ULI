@@ -41,7 +41,7 @@
                 android:layout_height="70dp"
                 android:layout_weight="1"
                 android:paddingTop="7dp"
-                app:srcCompat="@drawable/whale_leader_title" />
+                app:srcCompat="@drawable/leader_blue" />
 
             <View
                 android:layout_width="0dp"

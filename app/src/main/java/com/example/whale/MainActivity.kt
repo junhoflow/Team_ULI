@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
                     val intent3 = Intent(this, LeaderActivity::class.java)
                     startActivity(intent3)
                 } else {
-                    Toast.makeText(this, "로그인이 안되었습니다", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "아이디/비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -35,23 +35,29 @@ class MainActivity : AppCompatActivity() {
                     val intent2 = Intent(this, FollowerActivity::class.java)
                     startActivity(intent2)
                 } else {
-                    Toast.makeText(this, "로그인이 안되었습니다", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "아이디/비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show()
                 }
             }
-        }
-
-        btn_join.setOnClickListener {
-            loginUserId1(btn_idforlogin.text.toString(), btn_pwforlogin.text.toString())
-        }
-
-        btn_join2.setOnClickListener {
-            loginUserId2(btn_idforlogin.text.toString(), btn_pwforlogin.text.toString())
         }
 
         btn_forjoin.setOnClickListener {
             val intent = Intent(this, ActivityJoinMembership::class.java)
             startActivity(intent)
 
+        }
+
+        btn_login.setOnClickListener{
+            when {
+                rbtn_leader.isChecked -> {
+                    loginUserId1(btn_idforlogin.text.toString(), btn_pwforlogin.text.toString())
+                }
+                rbtn_follower.isChecked -> {
+                    loginUserId2(btn_idforlogin.text.toString(), btn_pwforlogin.text.toString())
+                }
+                else -> {
+                    Toast.makeText(this,"빈칸을 확인해주세요",Toast.LENGTH_SHORT).show()
+                }
+            }
         }
     }
 }

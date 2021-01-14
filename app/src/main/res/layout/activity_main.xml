@@ -1,146 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/login_background">
 
-    <Button
-        android:id="@+id/btn_join2"
-        android:layout_width="123dp"
-        android:layout_height="95dp"
-        android:layout_marginStart="73dp"
-        android:layout_marginLeft="73dp"
-        android:layout_marginEnd="68dp"
-        android:layout_marginRight="68dp"
-        android:text="follower/로그인"
-        app:backgroundTint="#4295F2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.534"
-        app:layout_constraintStart_toEndOf="@+id/btn_join"
-        app:layout_constraintTop_toBottomOf="@+id/btn_forjoin" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
 
-    <Button
-        android:id="@+id/btn_join"
-        android:layout_width="123dp"
-        android:layout_height="95dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginLeft="68dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        android:text="Leader/로그인"
-        app:backgroundTint="#4295F2"
-        app:layout_constraintEnd_toStartOf="@+id/btn_join2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_forjoin" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            app:srcCompat="@drawable/whale_icon_white" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="125dp"
+            app:srcCompat="@drawable/korean_white" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="140dp"
+            app:srcCompat="@drawable/whale_white" />
+
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="177dp"
-        android:layout_marginLeft="177dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="176dp"
-        android:layout_marginRight="176dp"
+        android:layout_gravity="center_horizontal"
         android:text="EMAIL"
-        android:textColor="#4295F2"
+        android:textColor="@color/white"
         android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
-
-    <EditText
-        android:id="@+id/btn_pwforlogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="101dp"
-        android:layout_marginLeft="101dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginRight="100dp"
-        android:backgroundTint="#4295F2"
-        android:ems="10"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/btn_idforlogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="101dp"
-        android:layout_marginRight="101dp"
-        android:backgroundTint="#4295F2"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/white"
         android:ems="10"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:inputType="textEmailAddress" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
-        android:layout_marginLeft="176dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="177dp"
-        android:layout_marginRight="177dp"
+        android:layout_gravity="center_horizontal"
         android:text="PW"
-        android:textColor="#4295F2"
+        android:textColor="@color/white"
         android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_idforlogin" />
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/btn_pwforlogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/white"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal">
+
+        <RadioButton
+            android:id="@+id/rbtn_leader"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:buttonTint="@color/white"
+            android:text="Leader"
+            android:textSize="16dp"
+            android:textStyle="bold"/>
+
+        <RadioButton
+            android:id="@+id/rbtn_follower"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:buttonTint="@color/white"
+            android:text="Follower"
+            android:textSize="16dp"
+            android:textStyle="bold"/>
+
+    </RadioGroup>
 
     <Button
         android:id="@+id/btn_searchid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_gravity="center_horizontal"
         android:text="아이디/비밀번호 찾기"
-        android:textColor="#4295F2"
-        app:backgroundTint="#FFFFFF"
-        app:iconTint="#00B050"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_pwforlogin"
-        app:rippleColor="#00FFFFFF"
+        android:textColor="@color/white"
+        android:textSize="10dp"
+        android:textStyle="bold"
         style = "?android:borderlessButtonStyle"/>
 
     <Button
         android:id="@+id/btn_forjoin"
-        style="?android:borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:text="회원가입"
-        android:textColor="#4295F2"
-        app:backgroundTint="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_searchid" />
+        android:textColor="@color/white"
+        android:textSize="10dp"
+        android:textStyle="bold"
+        style="?android:borderlessButtonStyle"/>
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="389dp"
-        android:layout_height="276dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_title2" />
+    <Button
+        android:id="@+id/btn_login"
+        android:background="@drawable/round_rectangle_hollow"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        app:backgroundTint="@null"
+        android:text="LOGIN"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
