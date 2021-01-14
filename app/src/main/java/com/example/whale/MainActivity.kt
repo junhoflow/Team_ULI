@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     Toast.makeText(this, "로그인이 되었습니다", Toast.LENGTH_SHORT).show()
                     val intent3 = Intent(this, LeaderActivity::class.java)
+                    intent3.putExtra("new", email)
                     startActivity(intent3)
                 } else {
                     Toast.makeText(this, "아이디/비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show()
@@ -33,6 +34,7 @@ class MainActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     Toast.makeText(this, "로그인이 되었습니다", Toast.LENGTH_SHORT).show()
                     val intent2 = Intent(this, FollowerActivity::class.java)
+
                     startActivity(intent2)
                 } else {
                     Toast.makeText(this, "아이디/비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show()

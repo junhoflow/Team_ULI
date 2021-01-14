@@ -9,6 +9,7 @@ import com.google.firebase.auth.FirebaseAuth
 import android.widget.Toast
 import androidx.core.content.res.TypedArrayUtils.getText
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.FirebaseFirestore
 //import com.google.firebase.auth.ktx.auth
 //import com.google.firebase.ktx.Firebase
 
@@ -69,15 +70,16 @@ class ActivityJoinMembership : AppCompatActivity() {
         var setEditTextString = join_nickname.text.toString()
         var setidString =join_id.text.toString()
         var setpwString = join_pw.text.toString()
+
         var map = mutableMapOf<String, Any>()
 
         map["nickname"] = setEditTextString
         map["id"] = setidString
         map["pw"] = setpwString
-        FirebaseDatabase.getInstance().reference
-            .child("users")
-            .push()
-            .setValue(map)
+        FirebaseFirestore.getInstance()
+            .collection("users")
+            .document()
+            .set(map)
 
    }
 
