@@ -39,7 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="이"
+        android:text="이름"
         android:textSize="18dp"
         android:textStyle="bold"
         android:textColor="#4295F2"/>
