@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     Toast.makeText(this, "로그인이 되었습니다", Toast.LENGTH_SHORT).show()
                     val intent2 = Intent(this, FollowerActivity::class.java)
+                    intent2.putExtra("new", email)
 
                     startActivity(intent2)
                 } else {

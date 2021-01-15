@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/popUp"
+    android:layout_width="300dp"
+    android:layout_height="400dp"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/layout_round_white"
+    android:orientation="vertical">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:icon="@drawable/ic_baseline_arrow_back_24"
+        android:stateListAnimator="@null"
+        app:backgroundTint = "#e2e2e2"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_horizontal"
+        android:text="퀘스트 내용"
+        android:textSize="18dp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/round_rectangle_fill"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_horizontal"
+        android:text="지급 포인트"
+        android:textSize="18dp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/round_rectangle_fill"/>
+
+    <Button
+        android:id="@+id/questPlus"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:layout_gravity="center_horizontal"
+        app:backgroundTint = "@color/maincolor_blue"
+        android:background="@drawable/round_rectangle_fill"
+        android:text="퀘스트 추가하기"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+</LinearLayout>
