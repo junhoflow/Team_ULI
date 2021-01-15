@@ -103,7 +103,7 @@
                         android:layout_width="55dp"
                         android:layout_height="wrap_content"
                         android:gravity="right"
-                        android:text="@string/TotalQuestCount"
+                        android:text="0"
                         android:textColor="@color/maincolor_blue"
                         android:textSize="24sp"
                         android:textStyle="bold" />

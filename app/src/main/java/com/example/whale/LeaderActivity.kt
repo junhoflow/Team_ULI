@@ -24,6 +24,7 @@ import java.util.*
 class LeaderActivity : AppCompatActivity(), View.OnClickListener {
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_leader)
@@ -52,6 +53,11 @@ class LeaderActivity : AppCompatActivity(), View.OnClickListener {
         nowtime.text = dateFormat
 
         queryObserveData()
+
+
+        TodayTotalCount.setText(intent.getStringExtra("testput"))
+
+
     }
 
     override fun onClick(v: View?) {

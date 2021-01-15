@@ -8,6 +8,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/whale_app_logo_round"
         android:supportsRtl="true"
+        android:name=".App"
         android:theme="@style/Theme.Whale">
         <activity android:name=".ProfileInfoActivity"></activity>
         <activity android:name=".LeaderActivity">

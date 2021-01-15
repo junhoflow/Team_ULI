@@ -1,30 +1,41 @@
 package com.example.whale
 
+import android.app.Application
+import android.app.Dialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.LinearLayout
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
+import androidx.appcompat.app.AlertDialog
+import androidx.core.content.res.TypedArrayUtils.getText
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.whale.Util.MyAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_profile_info.*
 import kotlinx.android.synthetic.main.activity_leader.*
 import kotlinx.android.synthetic.main.task_adding_popup.*
+import java.lang.Integer.parseInt
 import java.util.*
 import kotlin.collections.ArrayList
 
 class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
 
     internal var dataSource: MutableList<String> = ArrayList<String>()
-    var todaycount: Int = 0
+    var count: Int = 0
+    var counttest: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_info)
         adding_task.setOnClickListener(this)
+
+
+        yes.setOnClickListener {
+            counttest = counttest + 1
+            val nextIntent = Intent(this, LeaderActivity::class.java)
+            nextIntent.putExtra("testput", counttest)
+        }
 
         btn_back.setOnClickListener {
             val intent = Intent(this, LeaderActivity::class.java)
@@ -53,9 +64,6 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
                 newData.add(UUID.randomUUID().toString())
             adapter.updateItem(newData)
         }
-
-
-
 
 
     }
