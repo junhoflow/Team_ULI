@@ -1,6 +1,7 @@
 package com.example.whale
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.text.Layout
 import android.view.LayoutInflater
@@ -17,6 +18,8 @@ import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_leader.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.friend_adding_popup.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class LeaderActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -33,7 +36,8 @@ class LeaderActivity : AppCompatActivity(), View.OnClickListener {
         val layout6 = findViewById<LinearLayout>(R.id.layout6)
 
         layout1.setOnClickListener {
-            Toast.makeText(this, "알람 ON!", Toast.LENGTH_LONG).show()
+            val intent = Intent(this, ProfileInfoActivity::class.java)
+            startActivity(intent)
         }
 
         layout2.setOnClickListener(this)
@@ -42,6 +46,10 @@ class LeaderActivity : AppCompatActivity(), View.OnClickListener {
         layout5.setOnClickListener(this)
         layout6.setOnClickListener(this)
 
+        val currentDateTime = Calendar.getInstance().time
+        var dateFormat = SimpleDateFormat("yyyy년 MM월 dd일 EE요일", Locale.KOREA).format(currentDateTime)
+
+        nowtime.text = dateFormat
 
         queryObserveData()
     }

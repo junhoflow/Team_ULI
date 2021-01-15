@@ -118,7 +118,8 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="55dp"
+                            android:id="@+id/TodayTotalCount"
+                            android:layout_width="51dp"
                             android:layout_height="wrap_content"
                             android:gravity="right"
                             android:text="@string/TotalQuestCount"
