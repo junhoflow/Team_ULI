@@ -10,11 +10,13 @@
         android:roundIcon="@mipmap/whale_app_logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Whale">
+        <activity android:name=".ProfileInfoActivity"></activity>
+        <activity android:name=".LeaderActivity">
 
-        <activity android:name=".Test"></activity>
-        <activity android:name=".ProfileInfoActivity" />
-        <activity android:name=".LeaderActivity" />
-        <activity android:name=".termandregulations" />
+
+        </activity>
+        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".termandregulations"></activity>
         <activity android:name=".ActivityJoinMembership" />
         <activity android:name=".FollowerActivity" />
         <activity android:name=".MainActivity">
