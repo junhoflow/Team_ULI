@@ -60,11 +60,6 @@ class FollowerActivity : AppCompatActivity() {
 
         nowtime.text = dateFormat
 
-        if(intent.hasExtra("questCount"))
-        {
-            questCount.text = intent.getIntExtra("questCount",0).toString()
-        }
-
     }
 
     private fun queryObserveData() {
