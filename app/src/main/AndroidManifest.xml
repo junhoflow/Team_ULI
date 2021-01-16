@@ -12,18 +12,19 @@
         android:theme="@style/Theme.Whale">
         <activity android:name=".ProfileInfoActivity"></activity>
         <activity android:name=".LeaderActivity">
+
+
+        </activity>
+        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".termandregulations"></activity>
+        <activity android:name=".ActivityJoinMembership" />
+        <activity android:name=".FollowerActivity"></activity>
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-        </activity>
-        <activity android:name=".termandregulations"></activity>
-        <activity android:name=".ActivityJoinMembership" />
-        <activity android:name=".FollowerActivity"></activity>
-        <activity android:name=".MainActivity">
-
         </activity>
     </application>
 

@@ -22,8 +22,6 @@ import kotlin.collections.ArrayList
 class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
 
     internal var dataSource: MutableList<String> = ArrayList<String>()
-    var count: Int = 0
-    var counttest: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,16 +29,29 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
         adding_task.setOnClickListener(this)
 
 
-        yes.setOnClickListener {
-            counttest = counttest + 1
-            val nextIntent = Intent(this, LeaderActivity::class.java)
-            nextIntent.putExtra("testput", counttest)
+        var num = 0
+
+        adding_task.setOnClickListener{
+            val builder = AlertDialog.Builder(this)
+            val dialogView = layoutInflater.inflate(R.layout.task_adding_popup, null)
+            val button = dialogView.findViewById<Button>(R.id.ok2)
+
+            button.setOnClickListener{
+                Toast.makeText(this,"퀘스트를 추가했습니다",Toast.LENGTH_SHORT).show()
+                num++
+                //AlertDialog.dismiss()
+            }
+            builder.setView(dialogView).show()
         }
 
         btn_back.setOnClickListener {
-            val intent = Intent(this, LeaderActivity::class.java)
-            startActivity(intent)
+            val intent5 = Intent(this, LeaderActivity::class.java)
+            intent5.putExtra("questCountAdd",num)
+            startActivity(intent5)
         }
+
+
+
 
         initData()
 
