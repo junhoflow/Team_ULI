@@ -19,6 +19,8 @@ import kotlinx.android.synthetic.main.activity_join_membership.*
 class ActivityJoinMembership : AppCompatActivity() {
     //var auth : FirebaseAuth? =null
 
+    lateinit var auth : FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_join_membership)
@@ -76,10 +78,15 @@ class ActivityJoinMembership : AppCompatActivity() {
         map["nickname"] = setEditTextString
         map["id"] = setidString
         map["pw"] = setpwString
+        map["leaderQuest"] = 0
+        map["totalQuest"] = 0
+        map["finishQuest"] = 0
+
         FirebaseFirestore.getInstance()
             .collection("users")
-            .document()
+            .document(setidString)
             .set(map)
+
 
    }
 

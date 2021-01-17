@@ -8,6 +8,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 import kotlinx.android.synthetic.main.activity_main.*
+import java.lang.Integer.parseInt
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
                             var map: Map<String, Any> =
                                 querySnapshot?.documents?.first()?.data as Map<String, Any>
                             App.name = map["nickname"].toString()
+                            App.leader_quest = parseInt(map["leaderQuest"].toString())
                         }
                     val intent3 = Intent(this, ForLoading::class.java)
                     startActivity(intent3)

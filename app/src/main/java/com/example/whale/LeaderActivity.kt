@@ -7,14 +7,18 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_leader.*
+import kotlinx.android.synthetic.main.activity_personal_profile.*
 import kotlinx.android.synthetic.main.friend_adding_popup.*
 import kotlinx.android.synthetic.main.friend_adding_popup.view.*
 import java.text.SimpleDateFormat
 import java.util.*
 
 class LeaderActivity : AppCompatActivity(){
+
+    lateinit var auth : FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,9 +33,7 @@ class LeaderActivity : AppCompatActivity(){
             username2.text = App.name
         }
 
-        val refreshing : Int = App.count
-
-        TodayTotalCount.text = refreshing.toString()
+        TodayTotalCount.text = App.leader_quest.toString()
 
         val layout1 = findViewById<LinearLayout>(R.id.layout1)
         val layout2 = findViewById<LinearLayout>(R.id.layout2)
@@ -127,12 +129,16 @@ class LeaderActivity : AppCompatActivity(){
 
         nowtime.text = dateFormat
 
-
-
         if(intent.hasExtra("questCountAdd")) {
             var num = intent.getIntExtra("questCountAdd",0)
-            App.count += num
-            TodayTotalCount.text = App.count.toString()
+            App.leader_quest += num
+            auth = FirebaseAuth.getInstance()
+            val user = auth.currentUser?.email
+            FirebaseFirestore.getInstance()
+                .collection("users")
+                .document(user.toString()).update("leaderQuest", App.leader_quest)
+
+            TodayTotalCount.text = App.leader_quest.toString()
         }
         else{}
 
