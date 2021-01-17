@@ -3,7 +3,7 @@
     package="com.example.whale">
 
     <application
-        android:name = ".App"
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/whale_app_logo"
         android:label="@string/app_name"
@@ -15,6 +15,12 @@
         </activity>
         <activity android:name=".ProfileActivity"></activity>
         <activity android:name=".termandregulations"></activity>
+        <activity android:name=".ForLoading2"></activity>
+        <activity android:name=".ForLoading" />
+        <activity android:name=".ProfileInfoActivity" />
+        <activity android:name=".LeaderActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".termandregulations" />
         <activity android:name=".ActivityJoinMembership" />
         <activity android:name=".FollowerActivity" />
         <activity android:name=".MainActivity">

@@ -21,7 +21,14 @@ class FollowerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_follower)
 
-        queryObserveData()
+        if(App.name != null)
+        {
+            username_2.text = App.name
+        }
+        else{
+            Toast.makeText(this,"STILL",Toast.LENGTH_SHORT).show()
+        }
+
 
         var todoList = arrayListOf<ThingsTodo>(
             ThingsTodo("엄마카드로 학원비 결제하기", "200p"),
@@ -59,22 +66,6 @@ class FollowerActivity : AppCompatActivity() {
         var dateFormat = SimpleDateFormat("yyyy년 MM월 dd일 EE요일", Locale.KOREA).format(currentDateTime)
 
         nowtime.text = dateFormat
-
-    }
-
-    private fun queryObserveData() {
-        if (intent.hasExtra("new")) {
-            FirebaseFirestore.getInstance()
-                .collection("users")
-                .whereEqualTo("id", intent.getStringExtra("new"))
-                .addSnapshotListener() { querySnapshot, firebaseFireStoreException ->
-                    var map: Map<String, Any> =
-                        querySnapshot?.documents?.first()?.data as Map<String, Any>
-                    username_2.text = map["nickname"].toString()
-                } }
-        else {
-            Toast.makeText(this, "Error!", Toast.LENGTH_SHORT).show()
-        }
 
     }
 }

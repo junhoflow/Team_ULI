@@ -4,10 +4,7 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.FrameLayout
-import android.widget.LinearLayout
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore
@@ -19,11 +16,18 @@ import java.util.*
 
 class LeaderActivity : AppCompatActivity(){
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_leader)
+
+        val username: TextView = findViewById<TextView>(R.id.UserName)
+        val username2: TextView = findViewById<TextView>(R.id.username_1)
+
+        if(App.name != null)
+        {
+            username.text = App.name
+            username2.text = App.name
+        }
 
         val refreshing : Int = App.count
 
@@ -138,13 +142,11 @@ class LeaderActivity : AppCompatActivity(){
             saveDataforfriend()
         }
 
-        queryObserveData()
         queryObserveDataforadd()
 
 
         btn_person.setOnClickListener{
             val intent = Intent(this, ProfileActivity::class.java)
-            intent.putExtra("new", intent.getStringExtra("new"))
             startActivity(intent)
         }
 
@@ -172,25 +174,6 @@ class LeaderActivity : AppCompatActivity(){
 //        }
     }
 
-    fun queryObserveData() {
-        //val layout2 = findViewById<EditText>(R.id.btn_idforlogin).text.toString()
-        //val weight =
-
-        if (intent.hasExtra("new")) {
-            FirebaseFirestore.getInstance()
-                .collection("users")
-                .whereEqualTo("id", intent.getStringExtra("new"))
-                .addSnapshotListener() { querySnapshot, firebaseFireStoreException ->
-                    var map: Map<String, Any> =
-                        querySnapshot?.documents?.first()?.data as Map<String, Any>
-                    UserName.text = map["nickname"].toString()
-                    username_1.text = map["nickname"].toString()
-                }
-        }  else {
-            //Toast.makeText(this, "Error!", Toast.LENGTH_SHORT).show()
-        }
-
-    }
 
     fun saveDataforfriend(){
         var leader =  intent.getStringExtra("new")

@@ -7,6 +7,7 @@ class App : Application() {
     {
         var addingfriend : Int = 0
         var count : Int = 0
+        var name: String = ""
     }
 
 }
