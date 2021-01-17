@@ -12,7 +12,7 @@ class ForLoading : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_for_loading)
 
-        SystemClock.sleep(100)
+        SystemClock.sleep(500)
         val intent = Intent(this, LeaderActivity::class.java)
         startActivity(intent)
         finish()
