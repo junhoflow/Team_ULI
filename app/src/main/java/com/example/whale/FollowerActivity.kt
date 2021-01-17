@@ -1,5 +1,6 @@
 package com.example.whale
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -66,6 +67,11 @@ class FollowerActivity : AppCompatActivity() {
         var dateFormat = SimpleDateFormat("yyyy년 MM월 dd일 EE요일", Locale.KOREA).format(currentDateTime)
 
         nowtime.text = dateFormat
+
+        button_profile.setOnClickListener{
+            val intent = Intent(this, ProfileActivityFollower::class.java)
+            startActivity(intent)
+        }
 
     }
 }
