@@ -6,6 +6,7 @@ class App : Application() {
     companion object
     {
         var count : Int = 0
+        var name: String = ""
     }
 
 }
