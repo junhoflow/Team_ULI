@@ -24,6 +24,8 @@ class LeaderActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_leader)
 
+        TodayTotalCount.text = App.leader_quest.toString()
+
         val username: TextView = findViewById<TextView>(R.id.UserName)
         val username2: TextView = findViewById<TextView>(R.id.username_1)
 
@@ -128,19 +130,6 @@ class LeaderActivity : AppCompatActivity(){
         var dateFormat = SimpleDateFormat("yyyy년 MM월 dd일 EE요일", Locale.KOREA).format(currentDateTime)
 
         nowtime.text = dateFormat
-
-        if(intent.hasExtra("questCountAdd")) {
-            var num = intent.getIntExtra("questCountAdd",0)
-            App.leader_quest += num
-            auth = FirebaseAuth.getInstance()
-            val user = auth.currentUser?.email
-            FirebaseFirestore.getInstance()
-                .collection("users")
-                .document(user.toString()).update("leaderQuest", App.leader_quest)
-
-            TodayTotalCount.text = App.leader_quest.toString()
-        }
-        else{}
 
         val dialogView = layoutInflater.inflate(R.layout.friend_adding_popup, null)
         val addingbtn : Button = dialogView.findViewById<Button>(R.id.ok)

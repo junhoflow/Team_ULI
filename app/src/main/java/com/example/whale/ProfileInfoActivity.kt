@@ -11,6 +11,8 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.content.res.TypedArrayUtils.getText
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.whale.Util.MyAdapter
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_profile_info.*
 import kotlinx.android.synthetic.main.activity_leader.*
@@ -19,7 +21,7 @@ import java.lang.Integer.parseInt
 import java.util.*
 import kotlin.collections.ArrayList
 
-var num = 0
+lateinit var auth : FirebaseAuth
 
 class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -39,7 +41,13 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
 
             button.setOnClickListener{
                 Toast.makeText(this,"퀘스트를 추가했습니다",Toast.LENGTH_SHORT).show()
-                num++
+                App.leader_quest++
+                auth = FirebaseAuth.getInstance()
+                val user = auth.currentUser?.email
+                FirebaseFirestore.getInstance()
+                    .collection("users")
+                    .document(user.toString()).update("leaderQuest", App.leader_quest)
+
                 val intent5 = Intent(this, ProfileInfoActivity::class.java)
                 startActivity(intent5)
             }
@@ -54,9 +62,7 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
 
         btn_back.setOnClickListener {
             val intent5 = Intent(this, LeaderActivity::class.java)
-            intent5.putExtra("questCountAdd",num)
             startActivity(intent5)
-            num = 0
         }
 
 
