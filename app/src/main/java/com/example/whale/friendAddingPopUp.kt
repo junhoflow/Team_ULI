@@ -30,7 +30,7 @@ class MyDialog(context : Context) {
 
 
 
-        btnCancel = dlg.findViewById(R.id.cancel)
+        btnCancel = dlg.findViewById(R.id.cancel_btn)
         btnCancel.setOnClickListener {
             dlg.dismiss()
         }

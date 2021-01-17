@@ -5,6 +5,7 @@ import android.content.Context
 import android.view.Window
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 
 class MyDialog2(context : Context) {
     private val dlg = Dialog(context)   //부모 액티비티의 context 가 들어감
@@ -22,22 +23,21 @@ class MyDialog2(context : Context) {
 
         lblDesc = dlg.findViewById(R.id.content2)
         lblDesc.text = content
-
         btnOK = dlg.findViewById(R.id.ok2)
+        dlg.show()
         btnOK.setOnClickListener {
 
             listener.onOKClicked("확인을 눌렀습니다")
             dlg.dismiss()
+            App.addingfriend++
         }
-
-
 
         btnCancel = dlg.findViewById(R.id.cancel2)
         btnCancel.setOnClickListener {
             dlg.dismiss()
         }
 
-        dlg.show()
+
     }
 
 

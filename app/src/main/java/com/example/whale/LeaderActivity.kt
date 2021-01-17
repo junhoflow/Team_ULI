@@ -1,30 +1,33 @@
 package com.example.whale
 
-import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
-import android.text.Layout
-import android.view.LayoutInflater
 import android.view.View
-import android.widget.*
+import android.widget.Button
+import android.widget.FrameLayout
+import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.github.mikephil.charting.charts.LineChart
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_leader.*
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.friend_adding_popup.*
+import kotlinx.android.synthetic.main.friend_adding_popup.view.*
 import java.text.SimpleDateFormat
 import java.util.*
 
-class LeaderActivity : AppCompatActivity(), View.OnClickListener {
+class LeaderActivity : AppCompatActivity(){
 
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_leader)
+
+        val refreshing : Int = App.count
+
+        TodayTotalCount.text = refreshing.toString()
 
         val layout1 = findViewById<LinearLayout>(R.id.layout1)
         val layout2 = findViewById<LinearLayout>(R.id.layout2)
@@ -38,11 +41,82 @@ class LeaderActivity : AppCompatActivity(), View.OnClickListener {
             startActivity(intent)
         }
 
-        layout2.setOnClickListener(this)
-        layout3.setOnClickListener(this)
-        layout4.setOnClickListener(this)
-        layout5.setOnClickListener(this)
-        layout6.setOnClickListener(this)
+        layout2.setOnClickListener{
+            val builder = AlertDialog.Builder(this)
+            val dialogView = layoutInflater.inflate(R.layout.friend_adding_popup, null)
+            val button = dialogView.findViewById<Button>(R.id.ok)
+            val button2 = dialogView.findViewById<Button>(R.id.cancel_btn)
+            button2.setOnClickListener {
+                val intent = Intent(this, LeaderActivity::class.java)
+                startActivity(intent)
+            }
+            button.setOnClickListener {
+                val intent = Intent(this, LeaderActivity::class.java)
+                startActivity(intent)
+            }
+
+            builder.setView(dialogView).show()
+        }
+        layout3.setOnClickListener{
+            val builder = AlertDialog.Builder(this)
+            val dialogView = layoutInflater.inflate(R.layout.friend_adding_popup, null)
+            val button = dialogView.findViewById<Button>(R.id.ok)
+            val button2 = dialogView.findViewById<Button>(R.id.cancel_btn)
+            button2.setOnClickListener {
+                val intent = Intent(this, LeaderActivity::class.java)
+                startActivity(intent)
+            }
+            button.setOnClickListener {
+                val intent = Intent(this, LeaderActivity::class.java)
+                startActivity(intent)
+            }
+            builder.setView(dialogView).show()
+        }
+        layout4.setOnClickListener{
+            val builder = AlertDialog.Builder(this)
+            val dialogView = layoutInflater.inflate(R.layout.friend_adding_popup, null)
+            val button = dialogView.findViewById<Button>(R.id.ok)
+            val button2 = dialogView.findViewById<Button>(R.id.cancel_btn)
+            button2.setOnClickListener {
+                val intent = Intent(this, LeaderActivity::class.java)
+                startActivity(intent)
+            }
+            button.setOnClickListener {
+                val intent = Intent(this, LeaderActivity::class.java)
+                startActivity(intent)
+            }
+            builder.setView(dialogView).show()
+        }
+        layout5.setOnClickListener{
+            val builder = AlertDialog.Builder(this)
+            val dialogView = layoutInflater.inflate(R.layout.friend_adding_popup, null)
+            val button = dialogView.findViewById<Button>(R.id.ok)
+            val button2 = dialogView.findViewById<Button>(R.id.cancel_btn)
+            button2.setOnClickListener {
+                val intent = Intent(this, LeaderActivity::class.java)
+                startActivity(intent)
+            }
+            button.setOnClickListener {
+                val intent = Intent(this, LeaderActivity::class.java)
+                startActivity(intent)
+            }
+            builder.setView(dialogView).show()
+        }
+        layout6.setOnClickListener{
+            val builder = AlertDialog.Builder(this)
+            val dialogView = layoutInflater.inflate(R.layout.friend_adding_popup, null)
+            val button = dialogView.findViewById<Button>(R.id.ok)
+            val button2 = dialogView.findViewById<Button>(R.id.cancel_btn)
+            button2.setOnClickListener {
+                val intent = Intent(this, LeaderActivity::class.java)
+                startActivity(intent)
+            }
+            button.setOnClickListener {
+                val intent = Intent(this, LeaderActivity::class.java)
+                startActivity(intent)
+            }
+            builder.setView(dialogView).show()
+        }
 
         val currentDateTime = Calendar.getInstance().time
         var dateFormat = SimpleDateFormat("yyyy년 MM월 dd일 EE요일", Locale.KOREA).format(currentDateTime)
@@ -73,12 +147,15 @@ class LeaderActivity : AppCompatActivity(), View.OnClickListener {
             intent.putExtra("new", intent.getStringExtra("new"))
             startActivity(intent)
         }
+
+
     }
+
 
     fun queryObserveDataforadd() {
         //val layout2 = findViewById<EditText>(R.id.btn_idforlogin).text.toString()
         //val weight =
-        var a : String
+//        var a : String
 //        if (intent.hasExtra("new")) {
 //            FirebaseFirestore.getInstance()
 //                .collection("leader")
@@ -126,44 +203,5 @@ class LeaderActivity : AppCompatActivity(), View.OnClickListener {
             .document()
             .set(map)
     }
-
-    override fun onClick(v: View?) {
-        when (v?.id) {
-            layout2.id -> {
-                val dlg = MyDialog(this)
-                dlg.setOnOKClickedListener { content ->
-                    text.text = content
-                }
-                dlg.start("이메일 입력")
-            }
-            layout3.id -> {
-                val dlg = MyDialog(this)
-                dlg.setOnOKClickedListener { content ->
-                    text.text = content
-                }
-                dlg.start("이메일 입력")
-            }
-            layout4.id -> {
-                val dlg = MyDialog(this)
-                dlg.setOnOKClickedListener { content ->
-                    text.text = content
-                }
-                dlg.start("이메일 입력")
-            }layout5.id -> {
-                val dlg = MyDialog(this)
-                dlg.setOnOKClickedListener { content ->
-                    text.text = content
-                }
-                dlg.start("이메일 입력")
-            }layout6.id -> {
-                val dlg = MyDialog(this)
-                dlg.setOnOKClickedListener { content ->
-                    text.text = content
-                }
-                dlg.start("이메일 입력")
-            }
-        }
-    }
-
 
 }

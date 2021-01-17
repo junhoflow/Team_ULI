@@ -19,6 +19,8 @@ import java.lang.Integer.parseInt
 import java.util.*
 import kotlin.collections.ArrayList
 
+var num = 0
+
 class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
 
     internal var dataSource: MutableList<String> = ArrayList<String>()
@@ -29,18 +31,24 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
         adding_task.setOnClickListener(this)
 
 
-        var num = 0
-
         adding_task.setOnClickListener{
             val builder = AlertDialog.Builder(this)
             val dialogView = layoutInflater.inflate(R.layout.task_adding_popup, null)
             val button = dialogView.findViewById<Button>(R.id.ok2)
+            val button2= dialogView.findViewById<Button>(R.id.cancel2)
 
             button.setOnClickListener{
                 Toast.makeText(this,"퀘스트를 추가했습니다",Toast.LENGTH_SHORT).show()
                 num++
-                //AlertDialog.dismiss()
+                val intent5 = Intent(this, ProfileInfoActivity::class.java)
+                startActivity(intent5)
             }
+
+            button2.setOnClickListener{
+                val intent = Intent(this, ProfileInfoActivity::class.java)
+                startActivity(intent)
+            }
+
             builder.setView(dialogView).show()
         }
 
@@ -48,8 +56,8 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
             val intent5 = Intent(this, LeaderActivity::class.java)
             intent5.putExtra("questCountAdd",num)
             startActivity(intent5)
+            num = 0
         }
-
 
 
 
