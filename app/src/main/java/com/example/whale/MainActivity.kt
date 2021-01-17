@@ -26,8 +26,6 @@ class MainActivity : AppCompatActivity() {
                             var map: Map<String, Any> =
                                 querySnapshot?.documents?.first()?.data as Map<String, Any>
                             App.name = map["nickname"].toString()
-                            val hi = App.name
-                            Toast.makeText(this, "$hi is here", Toast.LENGTH_SHORT).show()
                         }
                     val intent3 = Intent(this, ForLoading::class.java)
                     startActivity(intent3)
