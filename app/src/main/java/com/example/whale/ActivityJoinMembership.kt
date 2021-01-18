@@ -97,6 +97,13 @@ class ActivityJoinMembership : AppCompatActivity() {
         map["follower6"] = follower_6
         map["questList"] = array
 
+        map["follower1_true"] = 0
+        map["follower2_true"] = 0
+        map["follower3_true"] = 0
+        map["follower4_true"] = 0
+        map["follower5_true"] = 0
+        map["follower6_true"] = 0
+
         FirebaseFirestore.getInstance()
             .collection("users")
             .document(setidString)

@@ -8,9 +8,12 @@ import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
+import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.activity_follower.*
 import kotlinx.android.synthetic.main.activity_leader.*
+import kotlinx.android.synthetic.main.activity_leader.nowtime
 import kotlinx.android.synthetic.main.activity_personal_profile.*
 import kotlinx.android.synthetic.main.friend_adding_popup.*
 import kotlinx.android.synthetic.main.friend_adding_popup.view.*
@@ -24,6 +27,32 @@ class LeaderActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_leader)
+
+        if(App.true_2 == 1)
+        {
+            Glide.with(this).load(App.follower_2[0]).into(imageView2)
+            second_profile_name.text = App.follower_2[1]
+        }
+        if(App.true_3 == 1)
+        {
+            Glide.with(this).load(App.follower_3[0]).into(imageView2)
+            third_profile_name.text = App.follower_3[1]
+        }
+        if(App.true_4 == 1)
+        {
+            Glide.with(this).load(App.follower_4[0]).into(imageView2)
+            fourth_profile_name.text = App.follower_4[1]
+        }
+        if(App.true_5 == 1)
+        {
+            Glide.with(this).load(App.follower_5[0]).into(imageView2)
+            five_profile_name.text = App.follower_5[1]
+        }
+        if(App.true_6 == 1)
+        {
+            Glide.with(this).load(App.follower_6[0]).into(imageView2)
+            six_profile_name.text = App.follower_6[1]
+        }
 
         TodayTotalCount.text = App.leader_quest.toString()
 
@@ -57,30 +86,36 @@ class LeaderActivity : AppCompatActivity(){
             val button2 = dialogView.findViewById<Button>(R.id.cancel_btn)
             val followerInput = dialogView.findViewById<EditText>(R.id.addingfollower)
 
-            button2.setOnClickListener {
-                val intent = Intent(this, LeaderActivity::class.java)
+            if(App.true_2 == 0)
+            {
+                builder.setView(dialogView).show()
+                button2.setOnClickListener {
+                    val intent = Intent(this, LeaderActivity::class.java)
+                    startActivity(intent)
+                }
+                button.setOnClickListener {
+                    App.follower_2.add("https://postfiles.pstatic.net/MjAyMTAxMThfMTgg/MDAxNjEwOTY5NTM1MTU0.NAEGuGN-ixjgIeg_USFEBQ1urrqYlKKU513rS3LySTgg.eWdBucFeiiJuqFHa6OLz62FnV2Cigm2sEnA4Hbo6748g.JPEG.tikibird/profile2.jpg?type=w773")
+                    App.follower_2.add(followerInput.text.toString())
+                    App.true_2 = 1
+                    auth = FirebaseAuth.getInstance()
+                    val user = auth.currentUser?.email
+                    FirebaseFirestore.getInstance()
+                        .collection("users")
+                        .document(user.toString()).update("follower2", App.follower_2)
+                    FirebaseFirestore.getInstance()
+                        .collection("users")
+                        .document(user.toString()).update("follower2_true", App.true_2)
+                    val intent = Intent(this, LeaderActivity::class.java)
+                    startActivity(intent)
+                }
+
+            }
+            else
+            {
+                val intent = Intent(this, ProfileInfoActivity::class.java)
                 startActivity(intent)
             }
-            button.setOnClickListener {
-                val intent = Intent(this, LeaderActivity::class.java)
-                startActivity(intent)
-
-//                auth = FirebaseAuth.getInstance()
-//                val user = auth.currentUser?.email
-//                App.follower_2 = followerInput.text.toString()
-//                FirebaseFirestore.getInstance()
-//                    .collection("users")
-//                    .document(user.toString()).update("follower2", App.follower_2)
-            }
-
-            builder.setView(dialogView).show()
         }
-
-//        val secondName = FirebaseFirestore.getInstance()
-//            .collection("users")
-//            .document(App.follower_2).
-
-//        second_profile_name.text = App.follower_2
 
 
         layout3.setOnClickListener{
@@ -88,60 +123,149 @@ class LeaderActivity : AppCompatActivity(){
             val dialogView = layoutInflater.inflate(R.layout.friend_adding_popup, null)
             val button = dialogView.findViewById<Button>(R.id.ok)
             val button2 = dialogView.findViewById<Button>(R.id.cancel_btn)
-            button2.setOnClickListener {
-                val intent = Intent(this, LeaderActivity::class.java)
+            val followerInput = dialogView.findViewById<EditText>(R.id.addingfollower)
+
+            if(App.true_3 == 0)
+            {
+                builder.setView(dialogView).show()
+                button2.setOnClickListener {
+                    val intent = Intent(this, LeaderActivity::class.java)
+                    startActivity(intent)
+                }
+                button.setOnClickListener {
+                    App.follower_3.add("https://postfiles.pstatic.net/MjAyMTAxMThfMTgg/MDAxNjEwOTY5NTM1MTU0.NAEGuGN-ixjgIeg_USFEBQ1urrqYlKKU513rS3LySTgg.eWdBucFeiiJuqFHa6OLz62FnV2Cigm2sEnA4Hbo6748g.JPEG.tikibird/profile2.jpg?type=w773")
+                    App.follower_3.add(followerInput.text.toString())
+                    App.true_3 = 1
+                    auth = FirebaseAuth.getInstance()
+                    val user = auth.currentUser?.email
+                    FirebaseFirestore.getInstance()
+                        .collection("users")
+                        .document(user.toString()).update("follower3", App.follower_3)
+                    FirebaseFirestore.getInstance()
+                        .collection("users")
+                        .document(user.toString()).update("follower3_true", App.true_3)
+                    val intent = Intent(this, LeaderActivity::class.java)
+                    startActivity(intent)
+                }
+
+            }
+            else
+            {
+                val intent = Intent(this, ProfileInfoActivity::class.java)
                 startActivity(intent)
             }
-            button.setOnClickListener {
-                val intent = Intent(this, LeaderActivity::class.java)
-                startActivity(intent)
-            }
-            builder.setView(dialogView).show()
         }
         layout4.setOnClickListener{
             val builder = AlertDialog.Builder(this)
             val dialogView = layoutInflater.inflate(R.layout.friend_adding_popup, null)
             val button = dialogView.findViewById<Button>(R.id.ok)
             val button2 = dialogView.findViewById<Button>(R.id.cancel_btn)
-            button2.setOnClickListener {
-                val intent = Intent(this, LeaderActivity::class.java)
+            val followerInput = dialogView.findViewById<EditText>(R.id.addingfollower)
+
+            if(App.true_4 == 0)
+            {
+                builder.setView(dialogView).show()
+                button2.setOnClickListener {
+                    val intent = Intent(this, LeaderActivity::class.java)
+                    startActivity(intent)
+                }
+                button.setOnClickListener {
+                    App.follower_4.add("https://postfiles.pstatic.net/MjAyMTAxMThfMTgg/MDAxNjEwOTY5NTM1MTU0.NAEGuGN-ixjgIeg_USFEBQ1urrqYlKKU513rS3LySTgg.eWdBucFeiiJuqFHa6OLz62FnV2Cigm2sEnA4Hbo6748g.JPEG.tikibird/profile2.jpg?type=w773")
+                    App.follower_4.add(followerInput.text.toString())
+                    App.true_4 = 1
+                    auth = FirebaseAuth.getInstance()
+                    val user = auth.currentUser?.email
+                    FirebaseFirestore.getInstance()
+                        .collection("users")
+                        .document(user.toString()).update("follower4", App.follower_4)
+                    FirebaseFirestore.getInstance()
+                        .collection("users")
+                        .document(user.toString()).update("follower4_true", App.true_4)
+                    val intent = Intent(this, LeaderActivity::class.java)
+                    startActivity(intent)
+                }
+
+            }
+            else
+            {
+                val intent = Intent(this, ProfileInfoActivity::class.java)
                 startActivity(intent)
             }
-            button.setOnClickListener {
-                val intent = Intent(this, LeaderActivity::class.java)
-                startActivity(intent)
-            }
-            builder.setView(dialogView).show()
         }
+
         layout5.setOnClickListener{
             val builder = AlertDialog.Builder(this)
             val dialogView = layoutInflater.inflate(R.layout.friend_adding_popup, null)
             val button = dialogView.findViewById<Button>(R.id.ok)
             val button2 = dialogView.findViewById<Button>(R.id.cancel_btn)
-            button2.setOnClickListener {
-                val intent = Intent(this, LeaderActivity::class.java)
+            val followerInput = dialogView.findViewById<EditText>(R.id.addingfollower)
+
+            if(App.true_5 == 0)
+            {
+                builder.setView(dialogView).show()
+                button2.setOnClickListener {
+                    val intent = Intent(this, LeaderActivity::class.java)
+                    startActivity(intent)
+                }
+                button.setOnClickListener {
+                    App.follower_5.add("https://postfiles.pstatic.net/MjAyMTAxMThfMTgg/MDAxNjEwOTY5NTM1MTU0.NAEGuGN-ixjgIeg_USFEBQ1urrqYlKKU513rS3LySTgg.eWdBucFeiiJuqFHa6OLz62FnV2Cigm2sEnA4Hbo6748g.JPEG.tikibird/profile2.jpg?type=w773")
+                    App.follower_5.add(followerInput.text.toString())
+                    App.true_5 = 1
+                    auth = FirebaseAuth.getInstance()
+                    val user = auth.currentUser?.email
+                    FirebaseFirestore.getInstance()
+                        .collection("users")
+                        .document(user.toString()).update("follower5", App.follower_5)
+                    FirebaseFirestore.getInstance()
+                        .collection("users")
+                        .document(user.toString()).update("follower5_true", App.true_5)
+                    val intent = Intent(this, LeaderActivity::class.java)
+                    startActivity(intent)
+                }
+
+            }
+            else
+            {
+                val intent = Intent(this, ProfileInfoActivity::class.java)
                 startActivity(intent)
             }
-            button.setOnClickListener {
-                val intent = Intent(this, LeaderActivity::class.java)
-                startActivity(intent)
-            }
-            builder.setView(dialogView).show()
         }
         layout6.setOnClickListener{
             val builder = AlertDialog.Builder(this)
             val dialogView = layoutInflater.inflate(R.layout.friend_adding_popup, null)
             val button = dialogView.findViewById<Button>(R.id.ok)
             val button2 = dialogView.findViewById<Button>(R.id.cancel_btn)
-            button2.setOnClickListener {
-                val intent = Intent(this, LeaderActivity::class.java)
+            val followerInput = dialogView.findViewById<EditText>(R.id.addingfollower)
+
+            if(App.true_6 == 0)
+            {
+                builder.setView(dialogView).show()
+                button2.setOnClickListener {
+                    val intent = Intent(this, LeaderActivity::class.java)
+                    startActivity(intent)
+                }
+                button.setOnClickListener {
+                    App.follower_6.add("https://postfiles.pstatic.net/MjAyMTAxMThfMTgg/MDAxNjEwOTY5NTM1MTU0.NAEGuGN-ixjgIeg_USFEBQ1urrqYlKKU513rS3LySTgg.eWdBucFeiiJuqFHa6OLz62FnV2Cigm2sEnA4Hbo6748g.JPEG.tikibird/profile2.jpg?type=w773")
+                    App.follower_6.add(followerInput.text.toString())
+                    App.true_6 = 1
+                    auth = FirebaseAuth.getInstance()
+                    val user = auth.currentUser?.email
+                    FirebaseFirestore.getInstance()
+                        .collection("users")
+                        .document(user.toString()).update("follower6", App.follower_6)
+                    FirebaseFirestore.getInstance()
+                        .collection("users")
+                        .document(user.toString()).update("follower6_true", App.true_6)
+                    val intent = Intent(this, LeaderActivity::class.java)
+                    startActivity(intent)
+                }
+
+            }
+            else
+            {
+                val intent = Intent(this, ProfileInfoActivity::class.java)
                 startActivity(intent)
             }
-            button.setOnClickListener {
-                val intent = Intent(this, LeaderActivity::class.java)
-                startActivity(intent)
-            }
-            builder.setView(dialogView).show()
         }
 
         val currentDateTime = Calendar.getInstance().time

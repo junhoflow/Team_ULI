@@ -28,6 +28,17 @@ class MainActivity : AppCompatActivity() {
                                 querySnapshot?.documents?.first()?.data as Map<String, Any>
                             App.name = map["nickname"].toString()
                             App.leader_quest = parseInt(map["leaderQuest"].toString())
+                            App.true_1 = parseInt(map["follower1_true"].toString())
+                            App.true_2 = parseInt(map["follower2_true"].toString())
+                            App.true_3 = parseInt(map["follower3_true"].toString())
+                            App.true_4 = parseInt(map["follower4_true"].toString())
+                            App.true_5 = parseInt(map["follower5_true"].toString())
+                            App.true_6 = parseInt(map["follower6_true"].toString())
+                            App.follower_2 = map["follower2"] as ArrayList<String>
+                            App.follower_3 = map["follower3"] as ArrayList<String>
+                            App.follower_4 = map["follower4"] as ArrayList<String>
+                            App.follower_5 = map["follower5"] as ArrayList<String>
+                            App.follower_6 = map["follower6"] as ArrayList<String>
                         }
                     val intent3 = Intent(this, ForLoading::class.java)
                     startActivity(intent3)
