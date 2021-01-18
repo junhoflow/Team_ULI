@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.addTextChangedListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_leader.*
@@ -54,6 +55,8 @@ class LeaderActivity : AppCompatActivity(){
             val dialogView = layoutInflater.inflate(R.layout.friend_adding_popup, null)
             val button = dialogView.findViewById<Button>(R.id.ok)
             val button2 = dialogView.findViewById<Button>(R.id.cancel_btn)
+            val followerInput = dialogView.findViewById<EditText>(R.id.addingfollower)
+
             button2.setOnClickListener {
                 val intent = Intent(this, LeaderActivity::class.java)
                 startActivity(intent)
@@ -61,10 +64,25 @@ class LeaderActivity : AppCompatActivity(){
             button.setOnClickListener {
                 val intent = Intent(this, LeaderActivity::class.java)
                 startActivity(intent)
+
+//                auth = FirebaseAuth.getInstance()
+//                val user = auth.currentUser?.email
+//                App.follower_2 = followerInput.text.toString()
+//                FirebaseFirestore.getInstance()
+//                    .collection("users")
+//                    .document(user.toString()).update("follower2", App.follower_2)
             }
 
             builder.setView(dialogView).show()
         }
+
+//        val secondName = FirebaseFirestore.getInstance()
+//            .collection("users")
+//            .document(App.follower_2).
+
+//        second_profile_name.text = App.follower_2
+
+
         layout3.setOnClickListener{
             val builder = AlertDialog.Builder(this)
             val dialogView = layoutInflater.inflate(R.layout.friend_adding_popup, null)

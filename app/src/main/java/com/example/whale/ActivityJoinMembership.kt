@@ -72,15 +72,30 @@ class ActivityJoinMembership : AppCompatActivity() {
         var setEditTextString = join_nickname.text.toString()
         var setidString =join_id.text.toString()
         var setpwString = join_pw.text.toString()
+        var array = arrayListOf<String>()
+        var follower_1 = arrayListOf<String>()
+        var follower_2 = arrayListOf<String>()
+        var follower_3 = arrayListOf<String>()
+        var follower_4 = arrayListOf<String>()
+        var follower_5 = arrayListOf<String>()
+        var follower_6 = arrayListOf<String>()
 
         var map = mutableMapOf<String, Any>()
 
+        //여기가 follower 다 array로 만든 코드
         map["nickname"] = setEditTextString
         map["id"] = setidString
         map["pw"] = setpwString
         map["leaderQuest"] = 0
         map["totalQuest"] = 0
         map["finishQuest"] = 0
+        map["follower1"] = follower_1
+        map["follower2"] = follower_2
+        map["follower3"] = follower_3
+        map["follower4"] = follower_4
+        map["follower5"] = follower_5
+        map["follower6"] = follower_6
+        map["questList"] = array
 
         FirebaseFirestore.getInstance()
             .collection("users")

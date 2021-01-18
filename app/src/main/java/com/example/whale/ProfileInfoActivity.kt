@@ -5,10 +5,13 @@ import android.app.Dialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.res.TypedArrayUtils.getText
+import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.whale.Util.MyAdapter
 import com.google.firebase.auth.FirebaseAuth
@@ -36,18 +39,26 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
         adding_task.setOnClickListener{
             val builder = AlertDialog.Builder(this)
             val dialogView = layoutInflater.inflate(R.layout.task_adding_popup, null)
+            val editText = dialogView.findViewById<EditText>(R.id.tastName)
             val button = dialogView.findViewById<Button>(R.id.ok2)
             val button2= dialogView.findViewById<Button>(R.id.cancel2)
 
             button.setOnClickListener{
                 Toast.makeText(this,"퀘스트를 추가했습니다",Toast.LENGTH_SHORT).show()
                 App.leader_quest++
+                App.questList.add(editText.text.toString())
                 auth = FirebaseAuth.getInstance()
                 val user = auth.currentUser?.email
                 FirebaseFirestore.getInstance()
                     .collection("users")
                     .document(user.toString()).update("leaderQuest", App.leader_quest)
-
+                //이거 일단을 내가 임의로 document "example@naver.com 으로 해놨는데 나중에 해당 follower
+                //이름으로 바꺼야대
+                //여기부터 leader가 추가하면 해당 follower의 questList로 추가되는 코드!!!!
+                FirebaseFirestore.getInstance()
+                    .collection("users")
+                    .document("example@naver.com")
+                    .update("questList",App.questList)
                 val intent5 = Intent(this, ProfileInfoActivity::class.java)
                 startActivity(intent5)
             }
