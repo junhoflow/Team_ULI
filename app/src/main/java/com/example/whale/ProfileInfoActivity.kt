@@ -69,12 +69,12 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
                     querySnapshot?.documents?.first()?.data as Map<String, Any>
                 App.name3 = map["nickname"].toString()
                 App.leader_quest = parseInt(map["leaderQuest"].toString())
-                App.finish_quest = parseInt(map["finishQuest"].toString())
-                App.total_quest = parseInt(map["totalQuest"].toString())
+                App.finish_quest_ = parseInt(map["finishQuest"].toString())
+                App.total_quest_ = parseInt(map["totalQuest"].toString())
             }
 
-        ing_quest.text = App.total_quest.toString()
-        ed_quest.text = App.finish_quest.toString()
+        ing_quest.text = App.total_quest_.toString()
+        ed_quest.text = App.finish_quest_.toString()
         username1.text = App.name3
         username2.text = App.name3
         username3.text = App.name3
@@ -84,7 +84,9 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
             val intent = Intent(this, ForLoading4::class.java)
             startActivity(intent)
         }
-        App.refreshing2++
+
+
+
 
         adding_task.setOnClickListener{
             val builder = AlertDialog.Builder(this)
@@ -123,6 +125,7 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         btn_back.setOnClickListener {
+            App.refreshing2++
             val intent5 = Intent(this, LeaderActivity::class.java)
             startActivity(intent5)
         }

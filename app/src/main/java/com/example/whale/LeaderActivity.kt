@@ -36,33 +36,95 @@ class LeaderActivity : AppCompatActivity(){
                 { querySnapshot, firebaseFireStoreException ->
                     var map: Map<String, Any> =
                         querySnapshot?.documents?.first()?.data as Map<String, Any>
-                    App.name2 = map["nickname"].toString()
+                    App.name_2 = map["nickname"].toString()
                     App.leader_quest = Integer.parseInt(map["leaderQuest"].toString())
-                    App.finish_quest = Integer.parseInt(map["finishQuest"].toString())
-                    App.total_quest = Integer.parseInt(map["totalQuest"].toString())
+                    App.finish_quest2 = Integer.parseInt(map["finishQuest"].toString())
+                    App.total_quest2 = Integer.parseInt(map["totalQuest"].toString())
                 }
 
-            second_profile_name.text = App.name2
+            second_profile_name.text = App.name_2
+            second_ing_quest.text = App.total_quest2.toString()
+            second_ed_quest.text = App.finish_quest2.toString()
         }
         if(App.true_3 == 1)
         {
             Glide.with(this).load(App.follower_3[0]).into(imageView3)
-            third_profile_name.text = App.follower_3[1]
+            FirebaseFirestore.getInstance()
+                .collection("users")
+                .whereEqualTo("id", App.follower_3[1])
+                .addSnapshotListener()
+                { querySnapshot, firebaseFireStoreException ->
+                    var map: Map<String, Any> =
+                        querySnapshot?.documents?.first()?.data as Map<String, Any>
+                    App.name_3 = map["nickname"].toString()
+                    App.leader_quest = Integer.parseInt(map["leaderQuest"].toString())
+                    App.finish_quest3 = Integer.parseInt(map["finishQuest"].toString())
+                    App.total_quest3 = Integer.parseInt(map["totalQuest"].toString())
+                }
+
+            third_profile_name.text = App.name_3
+            third_ing_quest.text = App.total_quest3.toString()
+            third_ed_quest.text = App.finish_quest3.toString()
         }
         if(App.true_4 == 1)
         {
             Glide.with(this).load(App.follower_4[0]).into(imageView4)
-            fourth_profile_name.text = App.follower_4[1]
+            FirebaseFirestore.getInstance()
+                .collection("users")
+                .whereEqualTo("id", App.follower_4[1])
+                .addSnapshotListener()
+                { querySnapshot, firebaseFireStoreException ->
+                    var map: Map<String, Any> =
+                        querySnapshot?.documents?.first()?.data as Map<String, Any>
+                    App.name_4 = map["nickname"].toString()
+                    App.leader_quest = Integer.parseInt(map["leaderQuest"].toString())
+                    App.finish_quest4 = Integer.parseInt(map["finishQuest"].toString())
+                    App.total_quest4 = Integer.parseInt(map["totalQuest"].toString())
+                }
+
+            third_profile_name.text = App.name_4
+            third_ing_quest.text = App.total_quest4.toString()
+            third_ed_quest.text = App.finish_quest4.toString()
         }
         if(App.true_5 == 1)
         {
             Glide.with(this).load(App.follower_5[0]).into(imageView5_)
-            five_profile_name.text = App.follower_5[1]
+            FirebaseFirestore.getInstance()
+                .collection("users")
+                .whereEqualTo("id", App.follower_5[1])
+                .addSnapshotListener()
+                { querySnapshot, firebaseFireStoreException ->
+                    var map: Map<String, Any> =
+                        querySnapshot?.documents?.first()?.data as Map<String, Any>
+                    App.name_5 = map["nickname"].toString()
+                    App.leader_quest = Integer.parseInt(map["leaderQuest"].toString())
+                    App.finish_quest5 = Integer.parseInt(map["finishQuest"].toString())
+                    App.total_quest5 = Integer.parseInt(map["totalQuest"].toString())
+                }
+
+            third_profile_name.text = App.name_5
+            third_ing_quest.text = App.total_quest5.toString()
+            third_ed_quest.text = App.finish_quest5.toString()
         }
         if(App.true_6 == 1)
         {
             Glide.with(this).load(App.follower_6[0]).into(imageView6)
-            six_profile_name.text = App.follower_6[1]
+            FirebaseFirestore.getInstance()
+                .collection("users")
+                .whereEqualTo("id", App.follower_6[1])
+                .addSnapshotListener()
+                { querySnapshot, firebaseFireStoreException ->
+                    var map: Map<String, Any> =
+                        querySnapshot?.documents?.first()?.data as Map<String, Any>
+                    App.name_6 = map["nickname"].toString()
+                    App.leader_quest = Integer.parseInt(map["leaderQuest"].toString())
+                    App.finish_quest6 = Integer.parseInt(map["finishQuest"].toString())
+                    App.total_quest6 = Integer.parseInt(map["totalQuest"].toString())
+                }
+
+            third_profile_name.text = App.name_6
+            third_ing_quest.text = App.total_quest6.toString()
+            third_ed_quest.text = App.finish_quest6.toString()
         }
 
         TodayTotalCount.text = App.leader_quest.toString()
@@ -77,7 +139,6 @@ class LeaderActivity : AppCompatActivity(){
             username2.text = App.name
         }
 
-        TodayTotalCount.text = App.leader_quest.toString()
 
         if(App.refreshing != 0){
             App.refreshing--

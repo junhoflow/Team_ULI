@@ -10,7 +10,7 @@ class ForLoading2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_for_loading2)
 
-        SystemClock.sleep(100)
+        SystemClock.sleep(500)
         val intent = Intent(this, FollowerActivity::class.java)
         startActivity(intent)
         finish()
