@@ -19,6 +19,8 @@
         <activity android:name=".termandregulations"></activity>
         <activity android:name=".ForLoading2"></activity>
         <activity android:name=".ForLoading" />
+        <activity android:name=".ForLoading3" />
+        <activity android:name=".ForLoading4" />
         <activity android:name=".ActivityJoinMembership" />
         <activity android:name=".FollowerActivity" />
         <activity android:name=".MainActivity">

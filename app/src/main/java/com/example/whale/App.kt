@@ -12,6 +12,7 @@ class App : Application() {
         var name: String = ""
         var whichOne: String = ""
         var name2: String = ""
+        var name3: String = ""
 
 //팔로워 별 이름 넣는거
         var follower_1 = arrayListOf<String>("example@naver.com")
@@ -38,6 +39,10 @@ class App : Application() {
         var questList5 = arrayListOf<String>()
         var questList6 = arrayListOf<String>()
         var who : Int = 0
+
+
+        var refreshing : Int = 1
+        var refreshing2 : Int = 1
     }
 
 }

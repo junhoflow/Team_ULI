@@ -79,6 +79,13 @@ class LeaderActivity : AppCompatActivity(){
 
         TodayTotalCount.text = App.leader_quest.toString()
 
+        if(App.refreshing != 0){
+            App.refreshing--
+            val intent = Intent(this, ForLoading3::class.java)
+            startActivity(intent)
+        }
+
+
         val layout1 = findViewById<LinearLayout>(R.id.layout1)
         val layout2 = findViewById<LinearLayout>(R.id.layout2)
         val layout3 = findViewById<LinearLayout>(R.id.layout3)

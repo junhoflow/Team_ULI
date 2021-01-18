@@ -67,7 +67,7 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
             { querySnapshot, firebaseFireStoreException ->
                 var map: Map<String, Any> =
                     querySnapshot?.documents?.first()?.data as Map<String, Any>
-                App.name2 = map["nickname"].toString()
+                App.name3 = map["nickname"].toString()
                 App.leader_quest = parseInt(map["leaderQuest"].toString())
                 App.finish_quest = parseInt(map["finishQuest"].toString())
                 App.total_quest = parseInt(map["totalQuest"].toString())
@@ -75,9 +75,16 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
 
         ing_quest.text = App.total_quest.toString()
         ed_quest.text = App.finish_quest.toString()
-        username1.text = App.name2
-        username2.text = App.name2
-        username3.text = App.name2
+        username1.text = App.name3
+        username2.text = App.name3
+        username3.text = App.name3
+
+        if(App.refreshing2 != 0){
+            App.refreshing2--
+            val intent = Intent(this, ForLoading4::class.java)
+            startActivity(intent)
+        }
+        App.refreshing2++
 
         adding_task.setOnClickListener{
             val builder = AlertDialog.Builder(this)
