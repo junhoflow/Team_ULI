@@ -35,6 +35,49 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_profile_info)
         adding_task.setOnClickListener(this)
 
+        var questList = arrayListOf<String>()
+        when(App.who){
+//            1 -> profile_email.text = App.follower_2[1]
+            2 -> {
+                profile_email.text = App.follower_2[1]
+                questList = App.questList2
+            }
+            3 -> {
+                profile_email.text = App.follower_3[1]
+                questList = App.questList3
+            }
+            4 -> {
+                profile_email.text = App.follower_4[1]
+                questList = App.questList4
+            }
+            5 -> {
+                profile_email.text = App.follower_5[1]
+                questList = App.questList5
+            }
+            6 -> {
+                profile_email.text = App.follower_6[1]
+                questList = App.questList6
+            }
+        }
+
+        FirebaseFirestore.getInstance()
+            .collection("users")
+            .whereEqualTo("id", profile_email.text)
+            .addSnapshotListener()
+            { querySnapshot, firebaseFireStoreException ->
+                var map: Map<String, Any> =
+                    querySnapshot?.documents?.first()?.data as Map<String, Any>
+                App.name2 = map["nickname"].toString()
+                App.leader_quest = parseInt(map["leaderQuest"].toString())
+                App.finish_quest = parseInt(map["finishQuest"].toString())
+                App.total_quest = parseInt(map["totalQuest"].toString())
+            }
+
+        ing_quest.text = App.total_quest.toString()
+        ed_quest.text = App.finish_quest.toString()
+        username1.text = App.name2
+        username2.text = App.name2
+        username3.text = App.name2
 
         adding_task.setOnClickListener{
             val builder = AlertDialog.Builder(this)
@@ -46,9 +89,10 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
             button.setOnClickListener{
                 Toast.makeText(this,"퀘스트를 추가했습니다",Toast.LENGTH_SHORT).show()
                 App.leader_quest++
-                App.questList.add(editText.text.toString())
+                questList.add(editText.text.toString())
                 auth = FirebaseAuth.getInstance()
                 val user = auth.currentUser?.email
+                //총 제시한 퀘스트 수 증가하는 코드
                 FirebaseFirestore.getInstance()
                     .collection("users")
                     .document(user.toString()).update("leaderQuest", App.leader_quest)
@@ -57,8 +101,8 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
                 //여기부터 leader가 추가하면 해당 follower의 questList로 추가되는 코드!!!!
                 FirebaseFirestore.getInstance()
                     .collection("users")
-                    .document("example@naver.com")
-                    .update("questList",App.questList)
+                    .document(profile_email.text.toString())
+                    .update("questList",questList)
                 val intent5 = Intent(this, ProfileInfoActivity::class.java)
                 startActivity(intent5)
             }

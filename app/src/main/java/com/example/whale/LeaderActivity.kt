@@ -9,8 +9,10 @@ import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_leader.*
+import kotlinx.android.synthetic.main.activity_leader.imageView2
 import kotlinx.android.synthetic.main.activity_leader.nowtime
 import kotlinx.android.synthetic.main.activity_personal_profile.*
+import kotlinx.android.synthetic.main.activity_profile_info.*
 import kotlinx.android.synthetic.main.friend_adding_popup.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -26,7 +28,21 @@ class LeaderActivity : AppCompatActivity(){
         if(App.true_2 == 1)
         {
             Glide.with(this).load(App.follower_2[0]).into(imageView2)
-            second_profile_name.text = App.follower_2[1]
+
+            FirebaseFirestore.getInstance()
+                .collection("users")
+                .whereEqualTo("id", App.follower_2[1])
+                .addSnapshotListener()
+                { querySnapshot, firebaseFireStoreException ->
+                    var map: Map<String, Any> =
+                        querySnapshot?.documents?.first()?.data as Map<String, Any>
+                    App.name2 = map["nickname"].toString()
+                    App.leader_quest = Integer.parseInt(map["leaderQuest"].toString())
+                    App.finish_quest = Integer.parseInt(map["finishQuest"].toString())
+                    App.total_quest = Integer.parseInt(map["totalQuest"].toString())
+                }
+
+            second_profile_name.text = App.name2
         }
         if(App.true_3 == 1)
         {
@@ -51,6 +67,7 @@ class LeaderActivity : AppCompatActivity(){
 
         TodayTotalCount.text = App.leader_quest.toString()
 
+
         val username: TextView = findViewById<TextView>(R.id.UserName)
         val username2: TextView = findViewById<TextView>(R.id.username_1)
 
@@ -72,6 +89,8 @@ class LeaderActivity : AppCompatActivity(){
         layout1.setOnClickListener {
             val intent = Intent(this, ProfileInfoActivity::class.java)
             startActivity(intent)
+            App.who = 0
+            App.who = 1
         }
 
         layout2.setOnClickListener{
@@ -107,6 +126,8 @@ class LeaderActivity : AppCompatActivity(){
             }
             else
             {
+                App.who = 0
+                App.who = 2
                 val intent = Intent(this, ProfileInfoActivity::class.java)
                 startActivity(intent)
             }
@@ -146,6 +167,8 @@ class LeaderActivity : AppCompatActivity(){
             }
             else
             {
+                App.who = 0
+                App.who = 3
                 val intent = Intent(this, ProfileInfoActivity::class.java)
                 startActivity(intent)
             }
@@ -183,6 +206,8 @@ class LeaderActivity : AppCompatActivity(){
             }
             else
             {
+                App.who = 0
+                App.who = 4
                 val intent = Intent(this, ProfileInfoActivity::class.java)
                 startActivity(intent)
             }
@@ -221,6 +246,8 @@ class LeaderActivity : AppCompatActivity(){
             }
             else
             {
+                App.who = 0
+                App.who = 5
                 val intent = Intent(this, ProfileInfoActivity::class.java)
                 startActivity(intent)
             }
@@ -258,6 +285,8 @@ class LeaderActivity : AppCompatActivity(){
             }
             else
             {
+                App.who = 0
+                App.who = 6
                 val intent = Intent(this, ProfileInfoActivity::class.java)
                 startActivity(intent)
             }

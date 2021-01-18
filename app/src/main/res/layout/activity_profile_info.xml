@@ -28,6 +28,7 @@
             android:layout_weight="1" />
 
         <TextView
+            android:id="@+id/username1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/FirstProfileName"
@@ -63,7 +64,7 @@
         android:id="@+id/layout1"
         android:layout_width="match_parent"
         android:layout_height="160dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="0dp"
         android:layout_marginHorizontal="30dp"
         android:background="@drawable/layout_round_white"
         android:orientation="horizontal">
@@ -97,7 +98,7 @@
                     android:layout_weight="1" />
 
                 <TextView
-                    android:id="@+id/first_profile_name"
+                    android:id="@+id/username2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
@@ -109,6 +110,7 @@
                     android:layout_marginStart="3dp" />
 
                 <TextView
+                    android:id="@+id/profile_email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
@@ -130,6 +132,7 @@
                         android:textSize="12dp" />
 
                     <TextView
+                        android:id="@+id/ing_quest"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/ing_quest"
@@ -162,6 +165,7 @@
                         android:textSize="12dp" />
 
                     <TextView
+                        android:id="@+id/ed_quest"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/ed_quest"
@@ -200,21 +204,19 @@
 
             <TextView
                 android:id="@+id/arrow"
-                android:layout_width="135dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:paddingLeft="15dp"
                 android:paddingTop="10dp"
-                android:text="►"
+                android:text="► "
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/UserName"
-                android:layout_width="137dp"
+                android:id="@+id/username3"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:paddingTop="10dp"
                 android:text="@string/FirstProfileName"
                 android:textColor="#FFFFFF"
@@ -223,14 +225,17 @@
 
             <TextView
                 android:id="@+id/follower_list"
-                android:layout_width="423dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:paddingTop="10dp"
-                android:text="님의 포인트리스트"
+                android:text=" 님의 포인트리스트"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp" />
 
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
         </LinearLayout>
     </LinearLayout>
 
@@ -273,12 +278,12 @@
         <Button
             android:id="@+id/adding_task"
             android:layout_width="match_parent"
-            android:layout_height="63dp"
+            android:layout_height="50dp"
             android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="15dp"
             android:background="@drawable/layout_round"
             android:gravity="center_horizontal"
-            android:insetTop="-15dp"
+            android:layout_marginTop="5dp"
+            android:insetTop="-22dp"
             android:insetBottom="0dp"
             android:text="+"
             android:textColor="@color/maincolor_blue"
