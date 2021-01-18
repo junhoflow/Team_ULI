@@ -144,7 +144,11 @@ class LeaderActivity : AppCompatActivity(){
             val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
         }
-
+        btn_home.setOnClickListener{
+            val intent =Intent(this, RegisterTask::class.java)
+            intent.putExtra("new" ,first_profile_name.text.toString())
+            startActivity(intent)
+        }
 
     }
 

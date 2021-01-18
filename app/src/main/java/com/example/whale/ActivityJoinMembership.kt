@@ -82,6 +82,7 @@ class ActivityJoinMembership : AppCompatActivity() {
         map["totalQuest"] = 0
         map["finishQuest"] = 0
 
+
         FirebaseFirestore.getInstance()
             .collection("users")
             .document(setidString)

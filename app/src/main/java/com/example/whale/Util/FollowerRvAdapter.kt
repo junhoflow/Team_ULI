@@ -31,7 +31,7 @@ class FollowerRvAdapter(val context: Context, val questList: ArrayList<ThingsTod
         fun bind(toDo: ThingsTodo, context: Context)
         {
             point1?.text = toDo.point
-            quest1?.text = toDo.title
+            quest1?.text = toDo.task
         }
     }
 

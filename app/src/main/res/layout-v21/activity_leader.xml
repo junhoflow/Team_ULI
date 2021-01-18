@@ -307,6 +307,7 @@
                                     android:src="@drawable/profile" />
 
                                 <TextView
+                                    android:id="@+id/first_profile_name"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
