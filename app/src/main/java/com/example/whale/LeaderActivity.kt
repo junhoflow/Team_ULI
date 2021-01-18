@@ -1,22 +1,17 @@
 package com.example.whale
 
-import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.widget.addTextChangedListener
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.activity_follower.*
 import kotlinx.android.synthetic.main.activity_leader.*
 import kotlinx.android.synthetic.main.activity_leader.nowtime
 import kotlinx.android.synthetic.main.activity_personal_profile.*
 import kotlinx.android.synthetic.main.friend_adding_popup.*
-import kotlinx.android.synthetic.main.friend_adding_popup.view.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -35,22 +30,22 @@ class LeaderActivity : AppCompatActivity(){
         }
         if(App.true_3 == 1)
         {
-            Glide.with(this).load(App.follower_3[0]).into(imageView2)
+            Glide.with(this).load(App.follower_3[0]).into(imageView3)
             third_profile_name.text = App.follower_3[1]
         }
         if(App.true_4 == 1)
         {
-            Glide.with(this).load(App.follower_4[0]).into(imageView2)
+            Glide.with(this).load(App.follower_4[0]).into(imageView4)
             fourth_profile_name.text = App.follower_4[1]
         }
         if(App.true_5 == 1)
         {
-            Glide.with(this).load(App.follower_5[0]).into(imageView2)
+            Glide.with(this).load(App.follower_5[0]).into(imageView5_)
             five_profile_name.text = App.follower_5[1]
         }
         if(App.true_6 == 1)
         {
-            Glide.with(this).load(App.follower_6[0]).into(imageView2)
+            Glide.with(this).load(App.follower_6[0]).into(imageView6)
             six_profile_name.text = App.follower_6[1]
         }
 
@@ -133,7 +128,7 @@ class LeaderActivity : AppCompatActivity(){
                     startActivity(intent)
                 }
                 button.setOnClickListener {
-                    App.follower_3.add("https://postfiles.pstatic.net/MjAyMTAxMThfMTgg/MDAxNjEwOTY5NTM1MTU0.NAEGuGN-ixjgIeg_USFEBQ1urrqYlKKU513rS3LySTgg.eWdBucFeiiJuqFHa6OLz62FnV2Cigm2sEnA4Hbo6748g.JPEG.tikibird/profile2.jpg?type=w773")
+                    App.follower_3.add("https://postfiles.pstatic.net/MjAyMTAxMThfMTAx/MDAxNjEwOTY5NTM3NzQw.XAfWuXZpG7Bq7e5gdBiClWDABqABneTYwQWPmvKKnQgg.rs--sxiwnxdZ65SlMJexhueTZ1Iy61BEgLMcn9ZG450g.JPEG.tikibird/profile3.jpg?type=w773")
                     App.follower_3.add(followerInput.text.toString())
                     App.true_3 = 1
                     auth = FirebaseAuth.getInstance()
