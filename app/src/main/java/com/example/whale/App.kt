@@ -11,6 +11,7 @@ class App : Application() {
         var finish_quest = 0
         var name: String = ""
         var whichOne: String = ""
+        var name2: String = ""
 
 //팔로워 별 이름 넣는거
         var follower_1 = arrayListOf<String>("example@naver.com")
@@ -30,7 +31,13 @@ class App : Application() {
         var true_5 = 0
         var true_6 = 0
 
-        var questList = arrayListOf<String>()
+        var questList1 = arrayListOf<String>()
+        var questList2 = arrayListOf<String>()
+        var questList3 = arrayListOf<String>()
+        var questList4 = arrayListOf<String>()
+        var questList5 = arrayListOf<String>()
+        var questList6 = arrayListOf<String>()
+        var who : Int = 0
     }
 
 }
