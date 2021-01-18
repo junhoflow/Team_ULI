@@ -31,12 +31,13 @@ class FollowerActivity : AppCompatActivity() {
         }
 
 
-        var todoList = arrayListOf<ThingsTodo>(
-            ThingsTodo("엄마카드로 학원비 결제하기", "200p"),
-            ThingsTodo("구몬 수학 p.33까지 학습 후 채점하기", "500p"),
-            ThingsTodo("구몬 수학 p.33까지 학습 후 채점하기", "500p"),
-            ThingsTodo("구몬 수학 p.33까지 학습 후 채점하기", "500p")
-        )
+        var todoList = arrayListOf<ThingsTodo>()
+
+        for(s in App.questListFollower.indices)
+        {
+            val thing = ThingsTodo(App.questListFollower[s])
+            todoList.add(thing)
+        }
 
         val fAdapter =
             FollowerRvAdapter(this, todoList)

@@ -25,12 +25,10 @@ class FollowerRvAdapter(val context: Context, val questList: ArrayList<ThingsTod
     }
 
     inner class Holder(itemView: View?):RecyclerView.ViewHolder(itemView!!){
-        val point1 = itemView?.findViewById<TextView>(R.id.item_point)
         val quest1 = itemView?.findViewById<TextView>(R.id.item_quest)
 
         fun bind(toDo: ThingsTodo, context: Context)
         {
-            point1?.text = toDo.point
             quest1?.text = toDo.title
         }
     }

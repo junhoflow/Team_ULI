@@ -50,7 +50,6 @@ class MainActivity : AppCompatActivity() {
 
         fun loginUserId2(email: String, password: String) {
             FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
-
                 if (task.isSuccessful) {
                     Toast.makeText(this, "로그인이 되었습니다", Toast.LENGTH_SHORT).show()
                     FirebaseFirestore.getInstance()
@@ -61,6 +60,7 @@ class MainActivity : AppCompatActivity() {
                             var map: Map<String, Any> =
                                 querySnapshot?.documents?.first()?.data as Map<String, Any>
                             App.name = map["nickname"].toString()
+                            App.questListFollower = map["questList"] as ArrayList<String>
                         }
                     val intent2 = Intent(this, ForLoading2::class.java)
                     startActivity(intent2)
