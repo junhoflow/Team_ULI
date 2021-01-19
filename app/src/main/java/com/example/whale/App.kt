@@ -6,6 +6,7 @@ class App : Application() {
     companion object {
         var addingfriend: Int = 0
         var leader_quest = 0
+
         var total_quest_ = 0
         var finish_quest_ = 0
         var total_quest1 = 0
@@ -35,7 +36,7 @@ class App : Application() {
 
 
         //팔로워 별 이름 넣는거
-        var follower_1 = arrayListOf<String>("example@naver.com")
+        var follower_1 = arrayListOf<String>()
         var follower_2 = arrayListOf<String>()
         var follower_3 = arrayListOf<String>()
         var follower_4 = arrayListOf<String>()

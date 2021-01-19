@@ -24,6 +24,29 @@ class LeaderActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_leader)
+        TodayTotalCount.text = App.leader_quest.toString()
+
+        if(App.true_1 == 1)
+        {
+            Glide.with(this).load(App.follower_1[0]).into(imageView1)
+
+            FirebaseFirestore.getInstance()
+                .collection("users")
+                .whereEqualTo("id", App.follower_1[1])
+                .addSnapshotListener()
+                { querySnapshot, firebaseFireStoreException ->
+                    var map: Map<String, Any> =
+                        querySnapshot?.documents?.first()?.data as Map<String, Any>
+                    App.name_1 = map["nickname"].toString()
+                    App.finish_quest1 = Integer.parseInt(map["finishQuest"].toString())
+                    App.total_quest1 = Integer.parseInt(map["totalQuest"].toString())
+                }
+
+            first_profile_name.text = App.name_1
+            first_ing_quest.text = App.total_quest1.toString()
+            first_ed_quest.text = App.finish_quest1.toString()
+
+        }
 
         if(App.true_2 == 1)
         {
@@ -37,7 +60,6 @@ class LeaderActivity : AppCompatActivity(){
                     var map: Map<String, Any> =
                         querySnapshot?.documents?.first()?.data as Map<String, Any>
                     App.name_2 = map["nickname"].toString()
-                    App.leader_quest = Integer.parseInt(map["leaderQuest"].toString())
                     App.finish_quest2 = Integer.parseInt(map["finishQuest"].toString())
                     App.total_quest2 = Integer.parseInt(map["totalQuest"].toString())
                 }
@@ -45,10 +67,13 @@ class LeaderActivity : AppCompatActivity(){
             second_profile_name.text = App.name_2
             second_ing_quest.text = App.total_quest2.toString()
             second_ed_quest.text = App.finish_quest2.toString()
+
         }
+
         if(App.true_3 == 1)
         {
             Glide.with(this).load(App.follower_3[0]).into(imageView3)
+
             FirebaseFirestore.getInstance()
                 .collection("users")
                 .whereEqualTo("id", App.follower_3[1])
@@ -57,7 +82,6 @@ class LeaderActivity : AppCompatActivity(){
                     var map: Map<String, Any> =
                         querySnapshot?.documents?.first()?.data as Map<String, Any>
                     App.name_3 = map["nickname"].toString()
-                    App.leader_quest = Integer.parseInt(map["leaderQuest"].toString())
                     App.finish_quest3 = Integer.parseInt(map["finishQuest"].toString())
                     App.total_quest3 = Integer.parseInt(map["totalQuest"].toString())
                 }
@@ -65,7 +89,9 @@ class LeaderActivity : AppCompatActivity(){
             third_profile_name.text = App.name_3
             third_ing_quest.text = App.total_quest3.toString()
             third_ed_quest.text = App.finish_quest3.toString()
+
         }
+
         if(App.true_4 == 1)
         {
             Glide.with(this).load(App.follower_4[0]).into(imageView4)
@@ -77,18 +103,17 @@ class LeaderActivity : AppCompatActivity(){
                     var map: Map<String, Any> =
                         querySnapshot?.documents?.first()?.data as Map<String, Any>
                     App.name_4 = map["nickname"].toString()
-                    App.leader_quest = Integer.parseInt(map["leaderQuest"].toString())
                     App.finish_quest4 = Integer.parseInt(map["finishQuest"].toString())
                     App.total_quest4 = Integer.parseInt(map["totalQuest"].toString())
                 }
 
-            third_profile_name.text = App.name_4
-            third_ing_quest.text = App.total_quest4.toString()
-            third_ed_quest.text = App.finish_quest4.toString()
+            fourth_profile_name.text = App.name_4
+            fourth_ing_quest.text = App.total_quest4.toString()
+            fourth_ed_quest.text = App.finish_quest4.toString()
         }
         if(App.true_5 == 1)
         {
-            Glide.with(this).load(App.follower_5[0]).into(imageView5_)
+            Glide.with(this).load(App.follower_5[0]).into(imageView5)
             FirebaseFirestore.getInstance()
                 .collection("users")
                 .whereEqualTo("id", App.follower_5[1])
@@ -97,14 +122,13 @@ class LeaderActivity : AppCompatActivity(){
                     var map: Map<String, Any> =
                         querySnapshot?.documents?.first()?.data as Map<String, Any>
                     App.name_5 = map["nickname"].toString()
-                    App.leader_quest = Integer.parseInt(map["leaderQuest"].toString())
                     App.finish_quest5 = Integer.parseInt(map["finishQuest"].toString())
                     App.total_quest5 = Integer.parseInt(map["totalQuest"].toString())
                 }
 
-            third_profile_name.text = App.name_5
-            third_ing_quest.text = App.total_quest5.toString()
-            third_ed_quest.text = App.finish_quest5.toString()
+            five_profile_name.text = App.name_5
+            five_ing_quest.text = App.total_quest5.toString()
+            five_ed_quest.text = App.finish_quest5.toString()
         }
         if(App.true_6 == 1)
         {
@@ -117,17 +141,15 @@ class LeaderActivity : AppCompatActivity(){
                     var map: Map<String, Any> =
                         querySnapshot?.documents?.first()?.data as Map<String, Any>
                     App.name_6 = map["nickname"].toString()
-                    App.leader_quest = Integer.parseInt(map["leaderQuest"].toString())
                     App.finish_quest6 = Integer.parseInt(map["finishQuest"].toString())
                     App.total_quest6 = Integer.parseInt(map["totalQuest"].toString())
                 }
 
-            third_profile_name.text = App.name_6
-            third_ing_quest.text = App.total_quest6.toString()
-            third_ed_quest.text = App.finish_quest6.toString()
+            six_profile_name.text = App.name_6
+            six_ing_quest.text = App.total_quest6.toString()
+            six_ed_quest.text = App.finish_quest6.toString()
         }
 
-        TodayTotalCount.text = App.leader_quest.toString()
 
 
         val username: TextView = findViewById<TextView>(R.id.UserName)
@@ -155,10 +177,43 @@ class LeaderActivity : AppCompatActivity(){
         val layout6 = findViewById<LinearLayout>(R.id.layout6)
 
         layout1.setOnClickListener {
-            val intent = Intent(this, ProfileInfoActivity::class.java)
-            startActivity(intent)
-            App.who = 0
-            App.who = 1
+            val builder = AlertDialog.Builder(this)
+            val dialogView = layoutInflater.inflate(R.layout.friend_adding_popup, null)
+            val button = dialogView.findViewById<Button>(R.id.ok)
+            val button2 = dialogView.findViewById<Button>(R.id.cancel_btn)
+            val followerInput = dialogView.findViewById<EditText>(R.id.addingfollower)
+
+            if(App.true_1 == 0)
+            {
+                builder.setView(dialogView).show()
+                button2.setOnClickListener {
+                    val intent = Intent(this, LeaderActivity::class.java)
+                    startActivity(intent)
+                }
+                button.setOnClickListener {
+                    App.follower_1.add("https://postfiles.pstatic.net/MjAyMTAxMTlfMTc1/MDAxNjExMDUwNjA3MTY4.4zwuetn8XxMVm-DtYni8zYVWRp0DBR9Q-Gr5PgnEAPcg.3MH7b43tBI7U3x__kxSJQO4N8qgaPQjNy1b8F8khhp0g.JPEG.tikibird/profile1.jpg?type=w773")
+                    App.follower_1.add(followerInput.text.toString())
+                    App.true_1 = 1
+                    auth = FirebaseAuth.getInstance()
+                    val user = auth.currentUser?.email
+                    FirebaseFirestore.getInstance()
+                        .collection("users")
+                        .document(user.toString()).update("follower1", App.follower_1)
+                    FirebaseFirestore.getInstance()
+                        .collection("users")
+                        .document(user.toString()).update("follower1_true", App.true_1)
+                    val intent = Intent(this, LeaderActivity::class.java)
+                    startActivity(intent)
+                }
+                App.refreshing++
+            }
+            else
+            {
+                App.who = 0
+                App.who = 1
+                val intent = Intent(this, ProfileInfoActivity::class.java)
+                startActivity(intent)
+            }
         }
 
         layout2.setOnClickListener{
@@ -176,7 +231,7 @@ class LeaderActivity : AppCompatActivity(){
                     startActivity(intent)
                 }
                 button.setOnClickListener {
-                    App.follower_2.add("https://postfiles.pstatic.net/MjAyMTAxMThfMTgg/MDAxNjEwOTY5NTM1MTU0.NAEGuGN-ixjgIeg_USFEBQ1urrqYlKKU513rS3LySTgg.eWdBucFeiiJuqFHa6OLz62FnV2Cigm2sEnA4Hbo6748g.JPEG.tikibird/profile2.jpg?type=w773")
+                    App.follower_2.add("https://postfiles.pstatic.net/MjAyMTAxMTlfMjI3/MDAxNjExMDUwNjA3MTcx.XEIHTU4053Uo9mLZQerYSVwZ0PeWMduyy4XA31BGBkcg.E3hLu7EJf7YWz0wCoBB-UTO0sTAMQ4E7XL5VP5vRfYog.JPEG.tikibird/profile2.jpg?type=w773")
                     App.follower_2.add(followerInput.text.toString())
                     App.true_2 = 1
                     auth = FirebaseAuth.getInstance()
@@ -190,7 +245,7 @@ class LeaderActivity : AppCompatActivity(){
                     val intent = Intent(this, LeaderActivity::class.java)
                     startActivity(intent)
                 }
-
+                App.refreshing++
             }
             else
             {
@@ -217,7 +272,7 @@ class LeaderActivity : AppCompatActivity(){
                     startActivity(intent)
                 }
                 button.setOnClickListener {
-                    App.follower_3.add("https://postfiles.pstatic.net/MjAyMTAxMThfMTAx/MDAxNjEwOTY5NTM3NzQw.XAfWuXZpG7Bq7e5gdBiClWDABqABneTYwQWPmvKKnQgg.rs--sxiwnxdZ65SlMJexhueTZ1Iy61BEgLMcn9ZG450g.JPEG.tikibird/profile3.jpg?type=w773")
+                    App.follower_3.add("https://postfiles.pstatic.net/MjAyMTAxMTlfMjA0/MDAxNjExMDUwNjA3MTY1.DbkyfTiJag7TckIJ_2otGgl0Bk-Wt9nO9F77u5tvEQ0g.DcihMHbGuW5uIv6IZUJSjoP2szByQX9pdSbXyAblsMog.JPEG.tikibird/profile3.jpg?type=w773")
                     App.follower_3.add(followerInput.text.toString())
                     App.true_3 = 1
                     auth = FirebaseAuth.getInstance()
@@ -231,7 +286,7 @@ class LeaderActivity : AppCompatActivity(){
                     val intent = Intent(this, LeaderActivity::class.java)
                     startActivity(intent)
                 }
-
+                App.refreshing++
             }
             else
             {
@@ -256,7 +311,7 @@ class LeaderActivity : AppCompatActivity(){
                     startActivity(intent)
                 }
                 button.setOnClickListener {
-                    App.follower_4.add("https://postfiles.pstatic.net/MjAyMTAxMThfMTgg/MDAxNjEwOTY5NTM1MTU0.NAEGuGN-ixjgIeg_USFEBQ1urrqYlKKU513rS3LySTgg.eWdBucFeiiJuqFHa6OLz62FnV2Cigm2sEnA4Hbo6748g.JPEG.tikibird/profile2.jpg?type=w773")
+                    App.follower_4.add("https://postfiles.pstatic.net/MjAyMTAxMTlfMjI3/MDAxNjExMDUwNjA3MTcx.XEIHTU4053Uo9mLZQerYSVwZ0PeWMduyy4XA31BGBkcg.E3hLu7EJf7YWz0wCoBB-UTO0sTAMQ4E7XL5VP5vRfYog.JPEG.tikibird/profile2.jpg?type=w773")
                     App.follower_4.add(followerInput.text.toString())
                     App.true_4 = 1
                     auth = FirebaseAuth.getInstance()
@@ -270,7 +325,7 @@ class LeaderActivity : AppCompatActivity(){
                     val intent = Intent(this, LeaderActivity::class.java)
                     startActivity(intent)
                 }
-
+                App.refreshing++
             }
             else
             {
@@ -296,7 +351,7 @@ class LeaderActivity : AppCompatActivity(){
                     startActivity(intent)
                 }
                 button.setOnClickListener {
-                    App.follower_5.add("https://postfiles.pstatic.net/MjAyMTAxMThfMTgg/MDAxNjEwOTY5NTM1MTU0.NAEGuGN-ixjgIeg_USFEBQ1urrqYlKKU513rS3LySTgg.eWdBucFeiiJuqFHa6OLz62FnV2Cigm2sEnA4Hbo6748g.JPEG.tikibird/profile2.jpg?type=w773")
+                    App.follower_5.add("https://postfiles.pstatic.net/MjAyMTAxMTlfMTc1/MDAxNjExMDUwNjA3MTY4.4zwuetn8XxMVm-DtYni8zYVWRp0DBR9Q-Gr5PgnEAPcg.3MH7b43tBI7U3x__kxSJQO4N8qgaPQjNy1b8F8khhp0g.JPEG.tikibird/profile1.jpg?type=w773")
                     App.follower_5.add(followerInput.text.toString())
                     App.true_5 = 1
                     auth = FirebaseAuth.getInstance()
@@ -310,7 +365,7 @@ class LeaderActivity : AppCompatActivity(){
                     val intent = Intent(this, LeaderActivity::class.java)
                     startActivity(intent)
                 }
-
+                App.refreshing++
             }
             else
             {
@@ -335,7 +390,7 @@ class LeaderActivity : AppCompatActivity(){
                     startActivity(intent)
                 }
                 button.setOnClickListener {
-                    App.follower_6.add("https://postfiles.pstatic.net/MjAyMTAxMThfMTgg/MDAxNjEwOTY5NTM1MTU0.NAEGuGN-ixjgIeg_USFEBQ1urrqYlKKU513rS3LySTgg.eWdBucFeiiJuqFHa6OLz62FnV2Cigm2sEnA4Hbo6748g.JPEG.tikibird/profile2.jpg?type=w773")
+                    App.follower_6.add("https://postfiles.pstatic.net/MjAyMTAxMTlfMjI3/MDAxNjExMDUwNjA3MTcx.XEIHTU4053Uo9mLZQerYSVwZ0PeWMduyy4XA31BGBkcg.E3hLu7EJf7YWz0wCoBB-UTO0sTAMQ4E7XL5VP5vRfYog.JPEG.tikibird/profile2.jpg?type=w773")
                     App.follower_6.add(followerInput.text.toString())
                     App.true_6 = 1
                     auth = FirebaseAuth.getInstance()
@@ -349,7 +404,7 @@ class LeaderActivity : AppCompatActivity(){
                     val intent = Intent(this, LeaderActivity::class.java)
                     startActivity(intent)
                 }
-
+                App.refreshing++
             }
             else
             {
@@ -378,7 +433,6 @@ class LeaderActivity : AppCompatActivity(){
             val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
         }
-
 
     }
 

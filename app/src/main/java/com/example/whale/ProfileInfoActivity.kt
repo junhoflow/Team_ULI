@@ -24,7 +24,7 @@ import java.lang.Integer.parseInt
 import java.util.*
 import kotlin.collections.ArrayList
 
-lateinit var auth : FirebaseAuth
+lateinit var auth: FirebaseAuth
 
 class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -36,8 +36,11 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
         adding_task.setOnClickListener(this)
 
         var questList = arrayListOf<String>()
-        when(App.who){
-//            1 -> profile_email.text = App.follower_2[1]
+        when (App.who) {
+            1 -> {
+                profile_email.text = App.follower_1[1]
+                questList = App.questList1
+            }
             2 -> {
                 profile_email.text = App.follower_2[1]
                 questList = App.questList2
@@ -68,7 +71,6 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
                 var map: Map<String, Any> =
                     querySnapshot?.documents?.first()?.data as Map<String, Any>
                 App.name3 = map["nickname"].toString()
-                App.leader_quest = parseInt(map["leaderQuest"].toString())
                 App.finish_quest_ = parseInt(map["finishQuest"].toString())
                 App.total_quest_ = parseInt(map["totalQuest"].toString())
             }
@@ -79,7 +81,7 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
         username2.text = App.name3
         username3.text = App.name3
 
-        if(App.refreshing2 != 0){
+        if (App.refreshing2 != 0) {
             App.refreshing2--
             val intent = Intent(this, ForLoading4::class.java)
             startActivity(intent)
@@ -88,15 +90,15 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
 
 
 
-        adding_task.setOnClickListener{
+        adding_task.setOnClickListener {
             val builder = AlertDialog.Builder(this)
             val dialogView = layoutInflater.inflate(R.layout.task_adding_popup, null)
             val editText = dialogView.findViewById<EditText>(R.id.tastName)
             val button = dialogView.findViewById<Button>(R.id.ok2)
-            val button2= dialogView.findViewById<Button>(R.id.cancel2)
+            val button2 = dialogView.findViewById<Button>(R.id.cancel2)
 
-            button.setOnClickListener{
-                Toast.makeText(this,"퀘스트를 추가했습니다",Toast.LENGTH_SHORT).show()
+            button.setOnClickListener {
+                Toast.makeText(this, "퀘스트를 추가했습니다", Toast.LENGTH_SHORT).show()
                 App.leader_quest++
                 questList.add(editText.text.toString())
                 auth = FirebaseAuth.getInstance()
@@ -111,12 +113,12 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
                 FirebaseFirestore.getInstance()
                     .collection("users")
                     .document(profile_email.text.toString())
-                    .update("questList",questList)
+                    .update("questList", questList)
                 val intent5 = Intent(this, ProfileInfoActivity::class.java)
                 startActivity(intent5)
             }
 
-            button2.setOnClickListener{
+            button2.setOnClickListener {
                 val intent = Intent(this, ProfileInfoActivity::class.java)
                 startActivity(intent)
             }

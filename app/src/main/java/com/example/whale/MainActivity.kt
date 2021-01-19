@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity() {
                             App.true_4 = parseInt(map["follower4_true"].toString())
                             App.true_5 = parseInt(map["follower5_true"].toString())
                             App.true_6 = parseInt(map["follower6_true"].toString())
+                            App.follower_1 = map["follower1"] as ArrayList<String>
                             App.follower_2 = map["follower2"] as ArrayList<String>
                             App.follower_3 = map["follower3"] as ArrayList<String>
                             App.follower_4 = map["follower4"] as ArrayList<String>
