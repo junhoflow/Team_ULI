@@ -10,7 +10,9 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp">
+        android:layout_height="250dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal">
 
         <ImageView
             android:layout_width="match_parent"
@@ -40,7 +42,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="EMAIL"
+        android:layout_marginBottom="15dp"
+        android:text="E-MAIL"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -48,9 +51,11 @@
     <EditText
         android:id="@+id/btn_idforlogin"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_gravity="center_horizontal"
-        android:backgroundTint="@color/white"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="@null"
+        android:background="@drawable/round_rectangle_hollow3"
         android:textColor="@color/white"
         android:ems="10"
         android:inputType="textEmailAddress" />
@@ -60,6 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="15dp"
         android:text="PW"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -68,9 +74,11 @@
     <EditText
         android:id="@+id/btn_pwforlogin"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_gravity="center_horizontal"
-        android:backgroundTint="@color/white"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="@null"
+        android:background="@drawable/round_rectangle_hollow3"
         android:textColor="@color/white"
         android:ems="10"
         android:inputType="textPassword" />
