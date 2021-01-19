@@ -23,6 +23,9 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_info)
+
+        //totalpoint.text = App.addPoint.toString()
+
         adding_task.setOnClickListener(this)
 
         var questList = arrayListOf<String>()
@@ -100,6 +103,7 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
         username1.text = App.name3
         username2.text = App.name3
         username3.text = App.name3
+
 
         if (App.refreshing2 != 0) {
             App.refreshing2--

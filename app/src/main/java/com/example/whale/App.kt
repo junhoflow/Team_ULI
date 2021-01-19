@@ -53,8 +53,11 @@ class App : Application() {
         var true_5 = 0
         var true_6 = 0
 
-        //유저 별 총 포인
+        //유저 별 총 포인트
         var point = 0
+
+        //리더가 퀘스트 선택한거 포인트 다 더해주는 변수
+        var addPoint = 0
 
         //고래방생 수
         var whaleBye = 0
