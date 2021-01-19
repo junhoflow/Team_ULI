@@ -39,6 +39,10 @@ class FollowerActivity : AppCompatActivity() {
             todoList.add(thing)
         }
 
+
+        queryObserveDataforTotalPoint()
+
+
         val fAdapter =
             FollowerRvAdapter(this, todoList)
         PointListRV.adapter = fAdapter
@@ -72,6 +76,17 @@ class FollowerActivity : AppCompatActivity() {
         button_profile.setOnClickListener{
             val intent = Intent(this, ProfileActivityFollower::class.java)
             startActivity(intent)
+        }
+    }
+    fun queryObserveDataforTotalPoint() {
+
+            FirebaseFirestore.getInstance()
+                .collection("users")
+                .whereEqualTo("nickname", username_2.text.toString() )
+                .addSnapshotListener() { querySnapshot, firebaseFireStoreException ->
+                    var map: Map<String, Any> = querySnapshot?.documents?.first()?.data as Map<String, Any>
+                    txt_totalPoint.text  = map["point"].toString()
+
         }
 
     }
