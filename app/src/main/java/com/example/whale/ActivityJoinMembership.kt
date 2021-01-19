@@ -73,6 +73,7 @@ class ActivityJoinMembership : AppCompatActivity() {
         var setidString =join_id.text.toString()
         var setpwString = join_pw.text.toString()
         var array = arrayListOf<String>()
+        var array2 = arrayListOf<Int>()
         var follower_1 = arrayListOf<String>()
         var follower_2 = arrayListOf<String>()
         var follower_3 = arrayListOf<String>()
@@ -96,6 +97,7 @@ class ActivityJoinMembership : AppCompatActivity() {
         map["follower5"] = follower_5
         map["follower6"] = follower_6
         map["questList"] = array
+        map["pointList"] = array2
 
         map["follower1_true"] = 0
         map["follower2_true"] = 0

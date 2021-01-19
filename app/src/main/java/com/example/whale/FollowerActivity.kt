@@ -35,7 +35,7 @@ class FollowerActivity : AppCompatActivity() {
 
         for(s in App.questListFollower.indices)
         {
-            val thing = ThingsTodo(App.questListFollower[s])
+            val thing = ThingsTodo(App.questListFollower[s], App.pointListFollower[s])
             todoList.add(thing)
         }
 

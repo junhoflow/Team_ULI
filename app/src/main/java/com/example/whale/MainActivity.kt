@@ -62,6 +62,7 @@ class MainActivity : AppCompatActivity() {
                                 querySnapshot?.documents?.first()?.data as Map<String, Any>
                             App.name = map["nickname"].toString()
                             App.questListFollower = map["questList"] as ArrayList<String>
+                            App.pointListFollower = map["pointList"] as ArrayList<Int>
                         }
                     val intent2 = Intent(this, ForLoading2::class.java)
                     startActivity(intent2)

@@ -26,10 +26,12 @@ class FollowerRvAdapter(val context: Context, val questList: ArrayList<ThingsTod
 
     inner class Holder(itemView: View?):RecyclerView.ViewHolder(itemView!!){
         val quest1 = itemView?.findViewById<TextView>(R.id.item_quest)
+        val point1 = itemView?.findViewById<TextView>(R.id.item_point)
 
         fun bind(toDo: ThingsTodo, context: Context)
         {
             quest1?.text = toDo.title
+            point1?.text = toDo.point.toString()
         }
     }
 
