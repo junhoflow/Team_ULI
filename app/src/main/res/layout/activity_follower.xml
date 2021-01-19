@@ -185,16 +185,19 @@
 
         <!--2.칭찬고래-->
         <RelativeLayout
+            android:id="@+id/whale_layout"
             android:layout_width="match_parent"
             android:layout_height="270dp"
             android:layout_marginTop="5dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="true">
             <TextView
                 android:id="@+id/txt_title_whale"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif"
-                android:text="▻ 칭찬고래"
+                android:text="► 칭찬고래"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -213,6 +216,30 @@
 
         </RelativeLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="► 바다로 보낸 칭찬고래 수"
+                android:textSize="10dp"
+                android:layout_marginTop="2dp"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/progress"
+                android:max="5"
+                android:progress="1"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:progressDrawable="@drawable/progressbar_bg"
+                android:layout_width="match_parent"
+                android:layout_height="12dp" />
+
+        </LinearLayout>
+
         <!--3.포인트리스트-->
         <LinearLayout
             android:layout_width="match_parent"
@@ -224,7 +251,7 @@
                 android:id="@+id/txt_title_ptlist"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="▻ 포인트리스트"
+                android:text="► 포인트리스트"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 

@@ -27,7 +27,7 @@ class ProfileActivityFollower : AppCompatActivity() {
         loadProfile()
 
         btn_back.setOnClickListener{
-            val intent = Intent(this, LeaderActivity::class.java)
+            val intent = Intent(this, FollowerActivity::class.java)
             startActivity(intent)
         }
 

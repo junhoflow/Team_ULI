@@ -63,6 +63,7 @@ class App : Application() {
 
         var refreshing: Int = 1
         var refreshing2: Int = 1
+
     }
 
 }
