@@ -102,11 +102,11 @@ class FollowerActivity : AppCompatActivity() {
 
 
     fun getTasksList() {
-        //val firebase: FirebaseUser = FirebaseAuth.getInstance().currentUser!!
+        //필요한 것 = 과제를 할당 받은 팔로워의 이름
+        // val firebase: FirebaseUser = FirebaseAuth.getInstance().currentUser!!
         var databaseReference: DatabaseReference = FirebaseDatabase.getInstance().getReference("정현")
 
         databaseReference.addValueEventListener(object : ValueEventListener {
-
 
             override fun onCancelled(error: DatabaseError) {
                 Toast.makeText(applicationContext, error.message, Toast.LENGTH_SHORT).show()
@@ -118,7 +118,6 @@ class FollowerActivity : AppCompatActivity() {
                 //if(currentUser!!.profileImage == ""){
                 //     img
                 // }
-
 
                 for (dataSnapShot: DataSnapshot in snapshot.children) {
                     val quest = dataSnapShot.getValue(ThingsTodo::class.java)

@@ -32,10 +32,11 @@
         android:textStyle="bold"/>
 
     <EditText
+        android:id="@+id/questContent"
         android:layout_width="270dp"
         android:layout_height="40dp"
         android:layout_gravity="center_horizontal"
-        android:background="@drawable/round_rectangle_fill"/>
+        android:background="@drawable/round_rectangle_fill" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,10 +48,11 @@
         android:textStyle="bold"/>
 
     <EditText
+        android:id="@+id/point"
         android:layout_width="270dp"
         android:layout_height="40dp"
         android:layout_gravity="center_horizontal"
-        android:background="@drawable/round_rectangle_fill"/>
+        android:background="@drawable/round_rectangle_fill" />
 
     <Button
         android:id="@+id/ok2"

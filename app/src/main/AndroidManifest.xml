@@ -10,9 +10,10 @@
         android:roundIcon="@mipmap/whale_app_logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Whale">
-        <activity android:name=".RegisterTask"></activity>
+
+        <activity android:name=".RegisterTask" />
         <activity android:name=".ProfileInfoActivity" />
-        <activity android:name=".LeaderActivity"></activity>
+        <activity android:name=".LeaderActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".ProfileActivityFollower" />
         <activity android:name=".termandregulations" />

@@ -8,11 +8,14 @@ import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_leader.*
 import kotlinx.android.synthetic.main.activity_personal_profile.*
 import kotlinx.android.synthetic.main.friend_adding_popup.*
 import kotlinx.android.synthetic.main.friend_adding_popup.view.*
+import kotlinx.android.synthetic.main.task_adding_popup.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -36,6 +39,7 @@ class LeaderActivity : AppCompatActivity(){
         }
 
         TodayTotalCount.text = App.leader_quest.toString()
+
 
         val layout1 = findViewById<LinearLayout>(R.id.layout1)
         val layout2 = findViewById<LinearLayout>(R.id.layout2)
@@ -133,11 +137,11 @@ class LeaderActivity : AppCompatActivity(){
 
         val dialogView = layoutInflater.inflate(R.layout.friend_adding_popup, null)
         val addingbtn : Button = dialogView.findViewById<Button>(R.id.ok)
-        addingbtn.setOnClickListener{
-            saveDataforfriend()
-        }
+        //addingbtn.setOnClickListener{
+          //  saveDataforfriend()
+        //}
 
-        queryObserveDataforadd()
+      //  queryObserveDataforadd()
 
 
         btn_person.setOnClickListener{
@@ -151,6 +155,8 @@ class LeaderActivity : AppCompatActivity(){
         }
 
     }
+
+
 
 
     fun queryObserveDataforadd() {
@@ -174,16 +180,16 @@ class LeaderActivity : AppCompatActivity(){
     }
 
 
-    fun saveDataforfriend(){
-        var leader =  intent.getStringExtra("new")
-        var setfriend = addingfollower.text.toString()
-        var map = mutableMapOf<String, Any>()
-        map["leader_email"] = leader.toString()
-        map["follower_name"] = setfriend
-        FirebaseFirestore.getInstance()
-            .collection("leader")
-            .document()
-            .set(map)
-    }
+    //fun saveDataforfriend(){
+     //   var leader =  intent.getStringExtra("new")
+     //   var setfriend = addingfollower.text.toString()
+      //  var map = mutableMapOf<String, Any>()
+      //  map["leader_email"] = leader.toString()
+      //  map["follower_name"] = setfriend
+       // FirebaseFirestore.getInstance()
+       //     .collection("leader")
+       //     .document()
+        //    .set(map)
+    //}
 
 }

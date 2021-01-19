@@ -1,53 +1,45 @@
-package com.example.whale
+
+
+package com.dongmin.www.customdialog
 
 import android.app.Dialog
 import android.content.Context
 import android.view.Window
 import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import java.util.HashMap
+import com.example.whale.R
 
-class MyDialog2(context : Context) {
+class CheckDelete(context : Context) {
     private val dlg = Dialog(context)   //부모 액티비티의 context 가 들어감
     private lateinit var lblDesc : TextView
     private lateinit var btnOK : Button
     private lateinit var btnCancel : Button
     private lateinit var listener : MyDialogOKClickedListener
 
-
-
     fun start(content : String) {
         dlg.requestWindowFeature(Window.FEATURE_NO_TITLE)   //타이틀바 제거
-        dlg.setContentView(R.layout.task_adding_popup)     //다이얼로그에 사용할 xml 파일을 불러옴
+        dlg.setContentView(R.layout.check_delete)     //다이얼로그에 사용할 xml 파일을 불러옴
         dlg.setCancelable(false)    //다이얼로그의 바깥 화면을 눌렀을 때 다이얼로그가 닫히지 않도록 함
 
-        lblDesc = dlg.findViewById(R.id.content2)
+        lblDesc = dlg.findViewById(R.id.content)
         lblDesc.text = content
-        btnOK = dlg.findViewById(R.id.ok2)
-        dlg.show()
 
+        btnOK = dlg.findViewById(R.id.ok)
         btnOK.setOnClickListener {
-
 
             listener.onOKClicked("확인을 눌렀습니다")
             dlg.dismiss()
-            App.addingfriend++
         }
-        //val dialogView2 = layoutInflater.inflate(R.layout.task_adding_popup, null)
 
 
-        btnCancel = dlg.findViewById(R.id.cancel2)
+
+        btnCancel = dlg.findViewById(R.id.cancel)
         btnCancel.setOnClickListener {
             dlg.dismiss()
         }
 
-
+        dlg.show()
     }
-
 
 
     fun setOnOKClickedListener(listener: (String) -> Unit) {

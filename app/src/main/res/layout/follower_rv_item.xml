@@ -5,7 +5,8 @@
     android:layout_height="50dp"
     android:layout_gravity="center_horizontal"
     android:background="@drawable/round_rectangle_fill"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/layoutQuest">
 
     <TextView
         android:id="@+id/item_point"
