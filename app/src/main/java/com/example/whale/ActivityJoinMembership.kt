@@ -90,6 +90,8 @@ class ActivityJoinMembership : AppCompatActivity() {
         map["leaderQuest"] = 0
         map["totalQuest"] = 0
         map["finishQuest"] = 0
+        map["point"] = 0
+        map["whaleBye"] = 0
         map["follower1"] = follower_1
         map["follower2"] = follower_2
         map["follower3"] = follower_3

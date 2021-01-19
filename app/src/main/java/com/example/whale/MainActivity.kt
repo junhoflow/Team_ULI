@@ -61,6 +61,8 @@ class MainActivity : AppCompatActivity() {
                             var map: Map<String, Any> =
                                 querySnapshot?.documents?.first()?.data as Map<String, Any>
                             App.name = map["nickname"].toString()
+                            App.point = parseInt(map["point"].toString())
+                            App.whaleBye = parseInt(map["whaleBye"].toString())
                             App.questListFollower = map["questList"] as ArrayList<String>
                             App.pointListFollower = map["pointList"] as ArrayList<Int>
                         }

@@ -4,6 +4,7 @@
     android:layout_width="380dp"
     android:layout_height="50dp"
     android:layout_gravity="center_horizontal"
+    android:id="@+id/LayoutQuest"
     android:background="@drawable/round_rectangle_fill"
     android:orientation="vertical">
 

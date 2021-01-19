@@ -53,6 +53,12 @@ class App : Application() {
         var true_5 = 0
         var true_6 = 0
 
+        //유저 별 총 포인
+        var point = 0
+
+        //고래방생 수
+        var whaleBye = 0
+
         var who: Int = 0
 
         var refreshing: Int = 1
