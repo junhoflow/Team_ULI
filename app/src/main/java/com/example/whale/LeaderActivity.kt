@@ -43,7 +43,7 @@ class LeaderActivity : AppCompatActivity(){
                 }
 
             first_profile_name.text = App.name_1
-            first_ing_quest.text = App.total_quest1.toString()
+            first_ing_quest.text = (App.total_quest1 - App.finish_quest1).toString()
             first_ed_quest.text = App.finish_quest1.toString()
 
         }
@@ -65,7 +65,7 @@ class LeaderActivity : AppCompatActivity(){
                 }
 
             second_profile_name.text = App.name_2
-            second_ing_quest.text = App.total_quest2.toString()
+            second_ing_quest.text = (App.total_quest2 - App.finish_quest2).toString()
             second_ed_quest.text = App.finish_quest2.toString()
 
         }
@@ -87,7 +87,7 @@ class LeaderActivity : AppCompatActivity(){
                 }
 
             third_profile_name.text = App.name_3
-            third_ing_quest.text = App.total_quest3.toString()
+            third_ing_quest.text = (App.total_quest3 - App.finish_quest3).toString()
             third_ed_quest.text = App.finish_quest3.toString()
 
         }
@@ -108,7 +108,7 @@ class LeaderActivity : AppCompatActivity(){
                 }
 
             fourth_profile_name.text = App.name_4
-            fourth_ing_quest.text = App.total_quest4.toString()
+            fourth_ing_quest.text = (App.total_quest4 - App.finish_quest4).toString()
             fourth_ed_quest.text = App.finish_quest4.toString()
         }
         if(App.true_5 == 1)
@@ -127,7 +127,7 @@ class LeaderActivity : AppCompatActivity(){
                 }
 
             five_profile_name.text = App.name_5
-            five_ing_quest.text = App.total_quest5.toString()
+            five_ing_quest.text = (App.total_quest5 - App.finish_quest5).toString()
             five_ed_quest.text = App.finish_quest5.toString()
         }
         if(App.true_6 == 1)
@@ -146,7 +146,7 @@ class LeaderActivity : AppCompatActivity(){
                 }
 
             six_profile_name.text = App.name_6
-            six_ing_quest.text = App.total_quest6.toString()
+            six_ing_quest.text = (App.total_quest6 - App.finish_quest6).toString()
             six_ed_quest.text = App.finish_quest6.toString()
         }
 

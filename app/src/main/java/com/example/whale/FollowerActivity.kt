@@ -94,9 +94,6 @@ class FollowerActivity : AppCompatActivity() {
         }
 
 
-        queryObserveDataforTotalPoint()
-
-
         val fAdapter =
             FollowerRvAdapter(this, todoList)
         PointListRV.adapter = fAdapter
@@ -105,16 +102,16 @@ class FollowerActivity : AppCompatActivity() {
         PointListRV.layoutManager = lm
         PointListRV.setHasFixedSize(false)
 
-        val pointCompare = parseInt(txt_totalPoint.text.toString())
+        txt_totalPoint.text  = App.point.toString()
 
         when {
-            pointCompare <= 1000 -> {
+            App.point <= 1000 -> {
                 Glide.with(this).load(R.raw.whale_moving).into(gif)
             }
-            pointCompare <= 3000 -> {
+            App.point <= 3000 -> {
                 Glide.with(this).load(R.raw.whale_moving_2).into(gif)
             }
-            pointCompare <= 6500 -> {
+            App.point <= 6500 -> {
                 Glide.with(this).load(R.raw.whale_moving_3).into(gif)
             }
             else -> {
@@ -132,20 +129,6 @@ class FollowerActivity : AppCompatActivity() {
             val intent = Intent(this, ProfileActivityFollower::class.java)
             startActivity(intent)
         }
-
-    }
-
-    fun queryObserveDataforTotalPoint() {
-
-        FirebaseFirestore.getInstance()
-            .collection("users")
-            .whereEqualTo("nickname", username_2.text.toString())
-            .addSnapshotListener() { querySnapshot, firebaseFireStoreException ->
-                var map: Map<String, Any> =
-                    querySnapshot?.documents?.first()?.data as Map<String, Any>
-                txt_totalPoint.text = map["point"].toString()
-
-            }
 
     }
 

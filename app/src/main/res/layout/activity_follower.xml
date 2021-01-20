@@ -243,7 +243,7 @@
         <!--3.포인트리스트-->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="270dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:orientation="vertical">
 
@@ -259,19 +259,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
                 android:id="@+id/PointListRV"/>
-
-            <Button
-                android:id="@+id/btn_update"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/round_rectangle_hollow2"
-                android:gravity="center"
-                android:text="UPDATE"
-                android:textColor="@color/maincolor_blue"
-                android:textStyle="bold"
-                android:textSize="14dp"
-                app:backgroundTint="@null"/>
 
         </LinearLayout>
 
