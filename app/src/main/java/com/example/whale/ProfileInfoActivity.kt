@@ -29,8 +29,7 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
         var pointList = arrayListOf<Int>()
         var todoList = arrayListOf<ThingsTodo>()
 
-        val fAdapter =
-            FollowerRvAdapter(this, todoList)
+        val fAdapter = FollowerRvAdapter(this, todoList)
         recycler_view.adapter = fAdapter
 
         val lm = LinearLayoutManager(this)
@@ -136,6 +135,7 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
                     .collection("users")
                     .document(profile_email.text.toString())
                     .update("pointList",pointList)
+                App.refreshing2 = 3
                 val intent5 = Intent(this, ProfileInfoActivity::class.java)
                 startActivity(intent5)
             }
@@ -143,13 +143,14 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
             button2.setOnClickListener {
                 val intent = Intent(this, ProfileInfoActivity::class.java)
                 startActivity(intent)
+                App.refreshing2++
             }
 
             builder.setView(dialogView).show()
         }
 
         btn_back.setOnClickListener {
-            App.refreshing2++
+            App.refreshing2 = 2
             val intent5 = Intent(this, LeaderActivity::class.java)
             startActivity(intent5)
         }

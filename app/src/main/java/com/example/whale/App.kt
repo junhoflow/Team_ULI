@@ -62,7 +62,7 @@ class App : Application() {
         var who: Int = 0
 
         var refreshing: Int = 1
-        var refreshing2: Int = 1
+        var refreshing2: Int = 2
 
     }
 
