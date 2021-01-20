@@ -62,14 +62,17 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
             }
             2 -> {
                 profile_email.text = App.follower_2[1]
+                info_profile.setImageResource(R.drawable.profile2)
                 search(App.follower_2[1])
             }
             3 -> {
                 profile_email.text = App.follower_3[1]
+                info_profile.setImageResource(R.drawable.profileman)
                 search(App.follower_3[1])
             }
             4 -> {
                 profile_email.text = App.follower_4[1]
+                info_profile.setImageResource(R.drawable.profile2)
                 search(App.follower_4[1])
             }
             5 -> {
@@ -78,6 +81,7 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
             }
             6 -> {
                 profile_email.text = App.follower_6[1]
+                info_profile.setImageResource(R.drawable.profile2)
                 search(App.follower_6[1])
             }
         }
