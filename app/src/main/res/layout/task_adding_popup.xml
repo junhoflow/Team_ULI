@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:stateListAnimator="@null"
         app:backgroundTint="#FFFFFF"
-        app:icon="@drawable/ic_baseline_arrow_back_24"
+        app:icon="@android:drawable/ic_menu_close_clear_cancel"
         app:iconTint="#C3C3C3" />
 
     <TextView
@@ -35,6 +35,7 @@
         android:id="@+id/taskName"
         android:layout_width="270dp"
         android:layout_height="40dp"
+        android:gravity="center"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/round_rectangle_fill"/>
     <TextView
@@ -51,6 +52,7 @@
         android:id="@+id/taskPoint"
         android:layout_width="270dp"
         android:layout_height="40dp"
+        android:gravity="center"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/round_rectangle_fill"/>
 

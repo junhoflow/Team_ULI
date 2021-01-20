@@ -37,7 +37,7 @@
             android:layout_weight="1"
             android:stateListAnimator="@null"
             app:backgroundTint="@color/maincolor_blue"
-            app:icon="@drawable/ic_baseline_home_24" />
+            app:icon="@android:drawable/ic_dialog_info" />
     </LinearLayout>
 
     <!--겹쳐진거 부터 큰틀 -->

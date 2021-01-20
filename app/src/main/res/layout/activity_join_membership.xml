@@ -18,8 +18,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:layout_gravity="center_horizontal"
-        android:text="EMAIL"
+        android:text="E-MAIL"
         android:textSize="18dp"
         android:textStyle="bold"
         android:textColor="#4295F2"/>
@@ -27,15 +28,18 @@
     <EditText
         android:id="@+id/join_id"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="20dp"
-        android:backgroundTint="#4295F2"
+        android:background="@drawable/round_rectangle_hollow2"
+        android:backgroundTint="@null"
+        android:gravity="center"
         android:textColor="@color/maincolor_blue"
         android:ems="10"
         android:inputType="textEmailAddress"/>
 
     <TextView
+        android:layout_marginBottom="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -47,15 +51,18 @@
     <EditText
         android:id="@+id/join_nickname"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="20dp"
-        android:backgroundTint="#4295F2"
+        android:background="@drawable/round_rectangle_hollow2"
+        android:backgroundTint="@null"
+        android:gravity="center"
         android:textColor="@color/maincolor_blue"
         android:ems="10"
         android:inputType="textEmailAddress"/>
 
     <TextView
+        android:layout_marginBottom="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -67,10 +74,12 @@
     <EditText
         android:id="@+id/join_pw"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="20dp"
-        android:backgroundTint="#4295F2"
+        android:background="@drawable/round_rectangle_hollow2"
+        android:backgroundTint="@null"
+        android:gravity="center"
         android:textColorHint="#804295F2"
         android:hint="8자 이상 입력해주세요."
         android:textColor="@color/maincolor_blue"
@@ -78,6 +87,7 @@
         android:inputType="textPassword"/>
 
     <TextView
+        android:layout_marginBottom="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -92,10 +102,12 @@
     <EditText
         android:id="@+id/join_pwconfirm"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="20dp"
-        android:backgroundTint="#4295F2"
+        android:background="@drawable/round_rectangle_hollow2"
+        android:backgroundTint="@null"
+        android:gravity="center"
         android:textColor="@color/maincolor_blue"
         android:ems="10"
         android:inputType="textPassword"/>

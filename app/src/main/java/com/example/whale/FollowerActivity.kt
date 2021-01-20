@@ -105,13 +105,13 @@ class FollowerActivity : AppCompatActivity() {
         txt_totalPoint.text  = App.point.toString()
 
         when {
-            App.point <= 1000 -> {
+            App.point <= 1001 -> {
                 Glide.with(this).load(R.raw.whale_moving).into(gif)
             }
-            App.point <= 3000 -> {
+            App.point <= 3001 -> {
                 Glide.with(this).load(R.raw.whale_moving_2).into(gif)
             }
-            App.point <= 6500 -> {
+            App.point <= 6501 -> {
                 Glide.with(this).load(R.raw.whale_moving_3).into(gif)
             }
             else -> {
