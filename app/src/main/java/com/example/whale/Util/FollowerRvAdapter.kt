@@ -8,8 +8,10 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.whale.App
 import com.example.whale.R
 import com.example.whale.ThingsTodo
+import com.google.firebase.firestore.FirebaseFirestore
 import java.lang.Integer.parseInt
 
 class FollowerRvAdapter(val context: Context, val questList: ArrayList<ThingsTodo>) :
@@ -26,6 +28,49 @@ class FollowerRvAdapter(val context: Context, val questList: ArrayList<ThingsTod
     override fun onBindViewHolder(holder: Holder, position: Int) {
         holder.bind(questList[position], context)
         holder.layoutQuest?.setOnClickListener{
+            var c = ""
+
+            when (App.who) {
+                1 -> {
+                    c = App.follower_1[1]
+
+                }
+                2 -> {
+                    c = App.follower_2[1]
+
+                }
+                3 -> {
+                    c = App.follower_3[1]
+
+                }
+                4 -> {
+                    c = App.follower_4[1]
+
+                }
+                5 -> {
+                    c = App.follower_5[1]
+
+                }
+                6 -> {
+                    c = App.follower_6[1]
+
+                }
+            }
+            var updatePoint3  = 0
+            var updatePoint2  = 0
+           // App.total_quest_= App.total_quest_ - 1
+            App.finish_quest_= App.finish_quest_ + 1
+            holder.ingquest?.text =App.total_quest_.toString()
+
+
+            FirebaseFirestore.getInstance()
+                .collection("users")
+                .document(c).update("finishQuest", App.finish_quest_ )
+
+
+            FirebaseFirestore.getInstance()
+                .collection("users")
+                .document(c).update("totalQuest", App.total_quest_)
 
             var a = holder.point1?.text.toString()
             var b = holder.quest1?.text.toString()
@@ -41,6 +86,7 @@ class FollowerRvAdapter(val context: Context, val questList: ArrayList<ThingsTod
         val quest1 = itemView?.findViewById<TextView>(R.id.item_quest)
         val point1 = itemView?.findViewById<TextView>(R.id.item_point)
         val layoutQuest = itemView?.findViewById<LinearLayout>(R.id.LayoutQuest)
+        val ingquest =  itemView?.findViewById<TextView>(R.id.ing_quest)
 
         fun bind(toDo: ThingsTodo, context: Context)
         {

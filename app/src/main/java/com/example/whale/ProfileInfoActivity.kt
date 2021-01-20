@@ -29,13 +29,6 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
         var pointList = arrayListOf<Int>()
         var todoList = arrayListOf<ThingsTodo>()
 
-        val fAdapter = FollowerRvAdapter(this, todoList)
-        recycler_view.adapter = fAdapter
-
-        val lm = LinearLayoutManager(this)
-        recycler_view.layoutManager = lm
-        recycler_view.setHasFixedSize(false)
-
         fun search(string: String)
         {
             FirebaseFirestore.getInstance()
@@ -82,6 +75,13 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
 
+        val fAdapter = FollowerRvAdapter(this, todoList)
+        recycler_view.adapter = fAdapter
+
+        val lm = LinearLayoutManager(this)
+        recycler_view.layoutManager = lm
+        recycler_view.setHasFixedSize(false)
+
         FirebaseFirestore.getInstance()
             .collection("users")
             .whereEqualTo("id", profile_email.text)
@@ -109,12 +109,19 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
         adding_task.setOnClickListener {
             val builder = AlertDialog.Builder(this)
             val dialogView = layoutInflater.inflate(R.layout.task_adding_popup, null)
-            val editText = dialogView.findViewById<EditText>(R.id.tastName)
+            val editText = dialogView.findViewById<EditText>(R.id.taskName)
             val editText2 = dialogView.findViewById<EditText>(R.id.taskPoint)
             val button = dialogView.findViewById<Button>(R.id.ok2)
             val button2 = dialogView.findViewById<Button>(R.id.cancel2)
 
             button.setOnClickListener {
+                var updatePoint3  = 0
+
+                updatePoint3 = App.total_quest_ + 1
+                FirebaseFirestore.getInstance()
+                    .collection("users")
+                    .document( profile_email.text.toString()).update("totalQuest", updatePoint3 )
+
                 Toast.makeText(this, "퀘스트를 추가했습니다", Toast.LENGTH_SHORT).show()
                 App.leader_quest++
                 questList.add(editText.text.toString())
