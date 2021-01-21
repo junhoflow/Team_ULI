@@ -1,4 +1,5 @@
-package com.example.whale.Adapters
+package com.example.whale.Util
+
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -12,7 +13,6 @@ import com.example.whale.App
 import com.example.whale.R
 import com.example.whale.ThingsTodo
 import com.google.firebase.firestore.FirebaseFirestore
-import java.lang.Integer.parseInt
 
 class FollowerRvAdapter(val context: Context, val questList: ArrayList<ThingsTodo>) :
     RecyclerView.Adapter<FollowerRvAdapter.Holder>(){

@@ -4,25 +4,17 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
-import com.example.whale.Adapters.FollowerRvAdapter
+import com.example.whale.Util.FollowerListAdapter
+import com.example.whale.Util.FollowerRvAdapter
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_follower.*
-import kotlinx.android.synthetic.main.activity_leader.*
-import kotlinx.android.synthetic.main.address_popup.*
-import kotlinx.android.synthetic.main.free_whale_popup.*
-import org.w3c.dom.Text
-import java.lang.Integer.parseInt
 import java.text.SimpleDateFormat
-import java.time.LocalDateTime
 import java.util.*
-import kotlinx.android.synthetic.main.activity_leader.nowtime as nowtime1
 
 class FollowerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -95,7 +87,7 @@ class FollowerActivity : AppCompatActivity() {
 
 
         val fAdapter =
-            FollowerRvAdapter(this, todoList)
+            FollowerListAdapter(this, todoList)
         PointListRV.adapter = fAdapter
 
         val lm = LinearLayoutManager(this)
