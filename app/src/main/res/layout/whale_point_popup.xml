@@ -37,7 +37,6 @@
             android:textStyle="bold" />
 
     </LinearLayout>
-
     <ImageView
         android:id="@+id/imageView8"
         android:layout_width="match_parent"
@@ -64,7 +63,6 @@
             android:textStyle="bold" />
 
     </LinearLayout>
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -72,6 +70,5 @@
         android:text="칭찬고래를 바다로 보낼 수 있어요!\n\n
 칭찬고래를 바다로 돌려보내면,\nWHALE이 해양생태계 보호를 위한\n기부를 진행해요.\n\n\n"
         android:textStyle="bold" />
-
 
 </LinearLayout>

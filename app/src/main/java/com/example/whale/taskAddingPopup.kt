@@ -24,7 +24,6 @@ class MyDialog2(context : Context) {
         btnOK = dlg.findViewById(R.id.ok2)
         dlg.show()
         btnOK.setOnClickListener {
-
             listener.onOKClicked("확인을 눌렀습니다")
             dlg.dismiss()
             App.addingfriend++
@@ -43,7 +42,7 @@ class MyDialog2(context : Context) {
             }
         }
     }
-    
+
     interface MyDialogOKClickedListener {
         fun onOKClicked(content : String)
     }
