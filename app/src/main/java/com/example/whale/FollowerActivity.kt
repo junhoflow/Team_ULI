@@ -158,6 +158,7 @@ class FollowerActivity : AppCompatActivity() {
                 val myTitle = "[나만의 퀘스트]: " + editText.text.toString()
                 App.questListFollower.add(myTitle)
                 App.pointListFollower.add(0)
+                App.my_quest_count++
 
                 auth = FirebaseAuth.getInstance()
                 val user = auth.currentUser?.email
@@ -170,6 +171,11 @@ class FollowerActivity : AppCompatActivity() {
                     .collection("users")
                     .document(user.toString())
                     .update("pointList",App.pointListFollower)
+                FirebaseFirestore.getInstance()
+                    .collection("users")
+                    .document(user.toString())
+                    .update("my_quest_count",App.my_quest_count)
+
                 Toast.makeText(this, "나만의 퀘스트를 추가했습니다", Toast.LENGTH_SHORT).show()
 
                 val intent = Intent(this, FollowerActivity::class.java)

@@ -65,6 +65,7 @@ class MainActivity : AppCompatActivity() {
                             App.whaleBye = parseInt(map["whaleBye"].toString())
                             App.questListFollower = map["questList"] as ArrayList<String>
                             App.pointListFollower = map["pointList"] as ArrayList<Int>
+                            App.my_quest_count = parseInt(map["my_quest_count"].toString())
                         }
                     val intent2 = Intent(this, ForLoading2::class.java)
                     startActivity(intent2)
