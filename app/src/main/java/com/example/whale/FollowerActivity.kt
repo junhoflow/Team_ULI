@@ -102,7 +102,7 @@ class FollowerActivity : AppCompatActivity() {
         PointListRV.layoutManager = lm
         PointListRV.setHasFixedSize(false)
 
-        txt_totalPoint.text  = App.point.toString()
+        txt_totalPoint.text = App.point.toString()
 
         when {
             App.point <= 1001 -> {
@@ -130,19 +130,40 @@ class FollowerActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        button_info.setOnClickListener{
+        button_info.setOnClickListener {
             val builder = AlertDialog.Builder(this)
             val dialogView = layoutInflater.inflate(R.layout.whale_point_popup, null)
             val button2 = dialogView.findViewById<Button>(R.id.whaleinfo_cancel)
             builder.setView(dialogView).show()
+
+            button2.setOnClickListener {
+                val intent = Intent(this, FollowerActivity::class.java)
+                startActivity(intent)
+            }
+        }
+
+        selfquest_btn.setOnClickListener {
+            val builder = AlertDialog.Builder(this)
+            val dialogView = layoutInflater.inflate(R.layout.selfquest_adding_popup, null)
+            val button = dialogView.findViewById<Button>(R.id.selfquest_ok)
+            val button2 = dialogView.findViewById<Button>(R.id.selfquest_cancel)
+            builder.setView(dialogView).show()
+
+            button.setOnClickListener{
+                Toast.makeText(this, "나만의 퀘스트를 추가했습니다", Toast.LENGTH_SHORT).show()
+
+//                DB에 [나만의 퀘스트] 키워드 추가해서 업데이트 해주기
+
+
+                val intent = Intent(this, FollowerActivity::class.java)
+                startActivity(intent)
+            }
 
             button2.setOnClickListener{
                 val intent = Intent(this, FollowerActivity::class.java)
                 startActivity(intent)
             }
         }
-
     }
-
 
 }
