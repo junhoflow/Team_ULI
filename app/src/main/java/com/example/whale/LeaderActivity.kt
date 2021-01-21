@@ -45,7 +45,6 @@ class LeaderActivity : AppCompatActivity(){
             first_profile_name.text = App.name_1
             first_ing_quest.text = (App.total_quest1 - App.finish_quest1).toString()
             first_ed_quest.text = App.finish_quest1.toString()
-
         }
 
         if(App.true_2 == 1)
@@ -67,7 +66,6 @@ class LeaderActivity : AppCompatActivity(){
             second_profile_name.text = App.name_2
             second_ing_quest.text = (App.total_quest2 - App.finish_quest2).toString()
             second_ed_quest.text = App.finish_quest2.toString()
-
         }
 
         if(App.true_3 == 1)
@@ -89,7 +87,6 @@ class LeaderActivity : AppCompatActivity(){
             third_profile_name.text = App.name_3
             third_ing_quest.text = (App.total_quest3 - App.finish_quest3).toString()
             third_ed_quest.text = App.finish_quest3.toString()
-
         }
 
         if(App.true_4 == 1)
@@ -111,6 +108,7 @@ class LeaderActivity : AppCompatActivity(){
             fourth_ing_quest.text = (App.total_quest4 - App.finish_quest4).toString()
             fourth_ed_quest.text = App.finish_quest4.toString()
         }
+
         if(App.true_5 == 1)
         {
             Glide.with(this).load(App.follower_5[0]).into(imageView5)
@@ -130,6 +128,7 @@ class LeaderActivity : AppCompatActivity(){
             five_ing_quest.text = (App.total_quest5 - App.finish_quest5).toString()
             five_ed_quest.text = App.finish_quest5.toString()
         }
+
         if(App.true_6 == 1)
         {
             Glide.with(this).load(App.follower_6[0]).into(imageView6)
@@ -150,8 +149,6 @@ class LeaderActivity : AppCompatActivity(){
             six_ed_quest.text = App.finish_quest6.toString()
         }
 
-
-
         val username: TextView = findViewById<TextView>(R.id.UserName)
         val username2: TextView = findViewById<TextView>(R.id.username_1)
 
@@ -161,13 +158,11 @@ class LeaderActivity : AppCompatActivity(){
             username2.text = App.name
         }
 
-
         if(App.refreshing != 0){
             App.refreshing--
             val intent = Intent(this, ForLoading3::class.java)
             startActivity(intent)
         }
-
 
         val layout1 = findViewById<LinearLayout>(R.id.layout1)
         val layout2 = findViewById<LinearLayout>(R.id.layout2)
@@ -255,7 +250,6 @@ class LeaderActivity : AppCompatActivity(){
                 startActivity(intent)
             }
         }
-
 
         layout3.setOnClickListener{
             val builder = AlertDialog.Builder(this)
@@ -444,9 +438,7 @@ class LeaderActivity : AppCompatActivity(){
             val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
         }
-
     }
-
 
     fun queryObserveDataforadd() {
         //val layout2 = findViewById<EditText>(R.id.btn_idforlogin).text.toString()
@@ -468,7 +460,6 @@ class LeaderActivity : AppCompatActivity(){
 //        }
     }
 
-
     fun saveDataforfriend(){
         var leader =  intent.getStringExtra("new")
         var setfriend = addingfollower.text.toString()
@@ -480,5 +471,4 @@ class LeaderActivity : AppCompatActivity(){
             .document()
             .set(map)
     }
-
 }

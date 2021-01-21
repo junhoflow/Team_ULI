@@ -232,6 +232,13 @@
                 android:textColor="#FFFFFF"
                 android:textSize="18sp" />
 
+            <TextView
+                android:id="@+id/test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" />
+
             <View
                 android:layout_width="0dp"
                 android:layout_height="0dp"

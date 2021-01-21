@@ -109,6 +109,7 @@ class FollowerRvAdapter(val context: Context, val questList: ArrayList<ThingsTod
         val layoutQuest = itemView?.findViewById<LinearLayout>(R.id.LayoutQuest)
         val ingquest =  itemView?.findViewById<TextView>(R.id.ing_quest)
 
+
         fun bind(toDo: ThingsTodo, context: Context)
         {
             quest1?.text = toDo.title

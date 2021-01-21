@@ -69,6 +69,10 @@ class App : Application() {
 
         var my_quest_count : Int = 0
 
+
+
+
+        var count : Int = 0
     }
 
 }

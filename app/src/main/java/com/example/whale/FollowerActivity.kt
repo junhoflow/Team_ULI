@@ -1,5 +1,4 @@
 package com.example.whale
-
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -39,7 +38,6 @@ class FollowerActivity : AppCompatActivity() {
         } else {
             Toast.makeText(this, "STILL", Toast.LENGTH_SHORT).show()
         }
-
 
         var todoList = arrayListOf<ThingsTodo>()
 
@@ -155,7 +153,7 @@ class FollowerActivity : AppCompatActivity() {
             val editText = dialogView.findViewById<EditText>(R.id.selfTaskName)
             builder.setView(dialogView).show()
 
-            button.setOnClickListener{
+            button.setOnClickListener {
                 //  DB에 [나만의 퀘스트] 키워드 추가해서 업데이트 해주기
                 val myTitle = "[나만의 퀘스트]: " + editText.text.toString()
                 App.questListFollower.add(myTitle)
@@ -172,11 +170,11 @@ class FollowerActivity : AppCompatActivity() {
                 FirebaseFirestore.getInstance()
                     .collection("users")
                     .document(user.toString())
-                    .update("pointList",App.pointListFollower)
+                    .update("pointList", App.pointListFollower)
                 FirebaseFirestore.getInstance()
                     .collection("users")
                     .document(user.toString())
-                    .update("my_quest_count",App.my_quest_count)
+                    .update("my_quest_count", App.my_quest_count)
 
                 Toast.makeText(this, "나만의 퀘스트를 추가했습니다", Toast.LENGTH_SHORT).show()
 
@@ -184,11 +182,10 @@ class FollowerActivity : AppCompatActivity() {
                 startActivity(intent)
             }
 
-            button2.setOnClickListener{
+            button2.setOnClickListener {
                 val intent = Intent(this, FollowerActivity::class.java)
                 startActivity(intent)
             }
         }
     }
-
 }
