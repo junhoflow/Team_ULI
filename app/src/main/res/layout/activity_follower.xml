@@ -233,20 +233,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:text="► 바다로 보낸 칭찬고래 수"
-                    android:textSize="10dp"
-                    android:textStyle="bold" />
-
                 <ProgressBar
                     android:id="@+id/progress"
                     style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="12dp"
+                    android:layout_marginTop="10dp"
                     android:max="5"
                     android:progress="1"
                     android:progressDrawable="@drawable/progressbar_bg" />
@@ -291,6 +283,6 @@
         android:text="나만의 퀘스트 만들기"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:backgroundTint="#FF9800" />
+        app:backgroundTint="#fdb813" />
 
 </LinearLayout>

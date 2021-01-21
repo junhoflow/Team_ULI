@@ -11,6 +11,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.whale.Adapters.FollowerRvAdapter
+import com.example.whale.Util.FollowerListAdapter
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_follower.*
@@ -95,7 +96,7 @@ class FollowerActivity : AppCompatActivity() {
 
 
         val fAdapter =
-            FollowerRvAdapter(this, todoList)
+            FollowerListAdapter(this, todoList)
         PointListRV.adapter = fAdapter
 
         val lm = LinearLayoutManager(this)
