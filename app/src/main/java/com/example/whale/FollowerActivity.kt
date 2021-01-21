@@ -16,6 +16,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_follower.*
 import kotlinx.android.synthetic.main.activity_leader.*
+import kotlinx.android.synthetic.main.activity_profile_info.*
 import kotlinx.android.synthetic.main.address_popup.*
 import kotlinx.android.synthetic.main.free_whale_popup.*
 import org.w3c.dom.Text
@@ -24,6 +25,7 @@ import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 import java.util.*
 import kotlinx.android.synthetic.main.activity_leader.nowtime as nowtime1
+
 
 class FollowerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,7 +43,7 @@ class FollowerActivity : AppCompatActivity() {
 
         var todoList = arrayListOf<ThingsTodo>()
 
-        for (s in App.questListFollower.indices) {
+        for (s in App.pointListFollower.indices) {
             val thing = ThingsTodo(App.questListFollower[s], App.pointListFollower[s])
             todoList.add(thing)
         }
@@ -148,13 +150,27 @@ class FollowerActivity : AppCompatActivity() {
             val dialogView = layoutInflater.inflate(R.layout.selfquest_adding_popup, null)
             val button = dialogView.findViewById<Button>(R.id.selfquest_ok)
             val button2 = dialogView.findViewById<Button>(R.id.selfquest_cancel)
+            val editText = dialogView.findViewById<EditText>(R.id.selfTaskName)
             builder.setView(dialogView).show()
 
             button.setOnClickListener{
+                //  DB에 [나만의 퀘스트] 키워드 추가해서 업데이트 해주기
+                val myTitle = "[나만의 퀘스트]: " + editText.text.toString()
+                App.questListFollower.add(myTitle)
+                App.pointListFollower.add(0)
+
+                auth = FirebaseAuth.getInstance()
+                val user = auth.currentUser?.email
+                FirebaseFirestore.getInstance()
+                    .collection("users")
+                    .document(user.toString())
+                    .update("questList", App.questListFollower)
+                //해당 퀘스트의 포인트 추가되는 코드
+                FirebaseFirestore.getInstance()
+                    .collection("users")
+                    .document(user.toString())
+                    .update("pointList",App.pointListFollower)
                 Toast.makeText(this, "나만의 퀘스트를 추가했습니다", Toast.LENGTH_SHORT).show()
-
-//                DB에 [나만의 퀘스트] 키워드 추가해서 업데이트 해주기
-
 
                 val intent = Intent(this, FollowerActivity::class.java)
                 startActivity(intent)
