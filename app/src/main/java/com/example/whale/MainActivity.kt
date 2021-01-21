@@ -78,7 +78,6 @@ class MainActivity : AppCompatActivity() {
         btn_forjoin.setOnClickListener {
             val intent = Intent(this, ActivityJoinMembership::class.java)
             startActivity(intent)
-
         }
 
         btn_login.setOnClickListener{

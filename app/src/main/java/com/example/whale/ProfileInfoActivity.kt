@@ -25,9 +25,6 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_profile_info)
         adding_task.setOnClickListener(this)
 
-//        var questList = arrayListOf<String>()
-//        var pointList = arrayListOf<Int>()
-
         var todoList = arrayListOf<ThingsTodo>()
 
         fun search(string: String)
@@ -167,7 +164,6 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
             val intent5 = Intent(this, LeaderActivity::class.java)
             startActivity(intent5)
         }
-
     }
 
     override fun onClick(v: View?) {
@@ -181,5 +177,4 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
     }
-
 }

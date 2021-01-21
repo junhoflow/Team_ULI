@@ -18,7 +18,6 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class LeaderActivity : AppCompatActivity(){
-
     lateinit var auth : FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,7 +40,6 @@ class LeaderActivity : AppCompatActivity(){
                     App.finish_quest1 = Integer.parseInt(map["finishQuest"].toString())
                     App.total_quest1 = Integer.parseInt(map["totalQuest"].toString())
                 }
-
             first_profile_name.text = App.name_1
             first_ing_quest.text = (App.total_quest1 - App.finish_quest1).toString()
             first_ed_quest.text = App.finish_quest1.toString()

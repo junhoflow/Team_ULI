@@ -30,7 +30,6 @@ class ProfileActivityFollower : AppCompatActivity() {
             val intent = Intent(this, FollowerActivity::class.java)
             startActivity(intent)
         }
-
     }
 
     private fun loadProfile(){

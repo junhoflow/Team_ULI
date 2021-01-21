@@ -14,8 +14,6 @@ class MyDialog2(context : Context) {
     private lateinit var btnCancel : Button
     private lateinit var listener : MyDialogOKClickedListener
 
-
-
     fun start(content : String) {
         dlg.requestWindowFeature(Window.FEATURE_NO_TITLE)   //타이틀바 제거
         dlg.setContentView(R.layout.task_adding_popup)     //다이얼로그에 사용할 xml 파일을 불러옴
@@ -36,10 +34,7 @@ class MyDialog2(context : Context) {
         btnCancel.setOnClickListener {
             dlg.dismiss()
         }
-
-
     }
-
 
     fun setOnOKClickedListener(listener: (String) -> Unit) {
         this.listener = object: MyDialogOKClickedListener {
@@ -48,8 +43,7 @@ class MyDialog2(context : Context) {
             }
         }
     }
-
-
+    
     interface MyDialogOKClickedListener {
         fun onOKClicked(content : String)
     }
