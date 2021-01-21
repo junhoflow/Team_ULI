@@ -24,9 +24,7 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_info)
         adding_task.setOnClickListener(this)
-
         var todoList = arrayListOf<ThingsTodo>()
-
         fun search(string: String)
         {
             FirebaseFirestore.getInstance()

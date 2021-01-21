@@ -17,16 +17,12 @@ import kotlinx.android.synthetic.main.activity_join_membership.*
 
 
 class ActivityJoinMembership : AppCompatActivity() {
-    //var auth : FirebaseAuth? =null
+
 
     lateinit var auth : FirebaseAuth
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_join_membership)
-        //auth = Firebase.auth
-        //auth = FirebaseAuth.getInstance()
-
 
 
         btn_joinmembershipdata.setOnClickListener{
@@ -38,13 +34,10 @@ class ActivityJoinMembership : AppCompatActivity() {
             startActivity(intent)
         }
 
-
     }
     fun createUserId(){
         var id = join_id.text.toString()
         var pw = join_pw.text.toString()
-
-
 
             if (join_pw.text.toString() == join_pwconfirm.text.toString()) {
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(id, pw).addOnCompleteListener { task ->
@@ -114,7 +107,6 @@ class ActivityJoinMembership : AppCompatActivity() {
             .collection("users")
             .document(setidString)
             .set(map)
-
 
    }
 

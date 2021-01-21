@@ -412,13 +412,9 @@ class LeaderActivity : AppCompatActivity(){
 
         nowtime.text = dateFormat
 
-        val dialogView = layoutInflater.inflate(R.layout.friend_adding_popup, null)
-        val addingbtn : Button = dialogView.findViewById<Button>(R.id.ok)
-        addingbtn.setOnClickListener{
-            saveDataforfriend()
-        }
 
-        queryObserveDataforadd()
+
+
 
         btn_chart.setOnClickListener{
             val builder = AlertDialog.Builder(this)
@@ -438,35 +434,7 @@ class LeaderActivity : AppCompatActivity(){
         }
     }
 
-    fun queryObserveDataforadd() {
-        //val layout2 = findViewById<EditText>(R.id.btn_idforlogin).text.toString()
-        //val weight =
-//        var a : String
-//        if (intent.hasExtra("new")) {
-//            FirebaseFirestore.getInstance()
-//                .collection("leader")
-//                .whereEqualTo("leader_email", intent.getStringExtra("new"))
-//                .addSnapshotListener() { querySnapshot, firebaseFireStoreException ->
-//                    var map: Map<String, Any> =
-//                        querySnapshot?.documents?.first()?.data as Map<String, Any>
-//                    first_profile_name.text = map["follower_name"].toString()
-//                    a = map["follower_name"].toString()
-//
-//                } }
-//        else {
-//            Toast.makeText(this, "Error!", Toast.LENGTH_SHORT).show()
-//        }
-    }
 
-    fun saveDataforfriend(){
-        var leader =  intent.getStringExtra("new")
-        var setfriend = addingfollower.text.toString()
-        var map = mutableMapOf<String, Any>()
-        map["leader_email"] = leader.toString()
-        map["follower_name"] = setfriend
-        FirebaseFirestore.getInstance()
-            .collection("leader")
-            .document()
-            .set(map)
-    }
+
+
 }

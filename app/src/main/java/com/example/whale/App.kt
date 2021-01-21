@@ -25,14 +25,12 @@ class App : Application() {
         var name: String = ""
         var name3: String = ""
 
-
         var name_1: String = ""
         var name_2: String = ""
         var name_3: String = ""
         var name_4: String = ""
         var name_5: String = ""
         var name_6: String = ""
-
 
         //팔로워 별 이름 넣는거
         var follower_1 = arrayListOf<String>()
@@ -68,8 +66,6 @@ class App : Application() {
         var refreshing2: Int = 2
 
         var my_quest_count : Int = 0
-
-
 
 
         var count : Int = 0
