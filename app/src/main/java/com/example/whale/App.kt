@@ -64,6 +64,8 @@ class App : Application() {
         var refreshing: Int = 1
         var refreshing2: Int = 2
 
+        var my_quest_count : Int = 0
+
     }
 
 }

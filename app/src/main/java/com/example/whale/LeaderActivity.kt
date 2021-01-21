@@ -191,7 +191,7 @@ class LeaderActivity : AppCompatActivity(){
                     startActivity(intent)
                 }
                 button.setOnClickListener {
-                    App.follower_1.add("https://postfiles.pstatic.net/MjAyMTAxMTlfMTc1/MDAxNjExMDUwNjA3MTY4.4zwuetn8XxMVm-DtYni8zYVWRp0DBR9Q-Gr5PgnEAPcg.3MH7b43tBI7U3x__kxSJQO4N8qgaPQjNy1b8F8khhp0g.JPEG.tikibird/profile1.jpg?type=w773")
+                    App.follower_1.add("https://postfiles.pstatic.net/MjAyMTAxMjFfMjQ2/MDAxNjExMjA4MDUwMDY5.BRIqcLbnswNNNlQE2iTy86UBLz8NprvPCLbRQgk7xx8g.BdO9aJKxhmTRMkoH09KpfmKnGxblLG24j-kT6QWPX9wg.PNG.tikibird/1.png?type=w773")
                     App.follower_1.add(followerInput.text.toString())
                     App.true_1 = 1
                     auth = FirebaseAuth.getInstance()
@@ -231,7 +231,7 @@ class LeaderActivity : AppCompatActivity(){
                     startActivity(intent)
                 }
                 button.setOnClickListener {
-                    App.follower_2.add("https://postfiles.pstatic.net/MjAyMTAxMTlfMjI3/MDAxNjExMDUwNjA3MTcx.XEIHTU4053Uo9mLZQerYSVwZ0PeWMduyy4XA31BGBkcg.E3hLu7EJf7YWz0wCoBB-UTO0sTAMQ4E7XL5VP5vRfYog.JPEG.tikibird/profile2.jpg?type=w773")
+                    App.follower_2.add("https://postfiles.pstatic.net/MjAyMTAxMjFfMTA4/MDAxNjExMjA4MDUwMDY5.zTUj2nuZRy5yViR-axTNUjG5nnOOJwKBSvYN0kdo5RAg.o-CRuJmkdNjFtd_W1SF0VYjvGVhhNiPCCsXl8n24PKQg.PNG.tikibird/2.png?type=w773")
                     App.follower_2.add(followerInput.text.toString())
                     App.true_2 = 1
                     auth = FirebaseAuth.getInstance()
@@ -272,7 +272,7 @@ class LeaderActivity : AppCompatActivity(){
                     startActivity(intent)
                 }
                 button.setOnClickListener {
-                    App.follower_3.add("https://postfiles.pstatic.net/MjAyMTAxMTlfMjA0/MDAxNjExMDUwNjA3MTY1.DbkyfTiJag7TckIJ_2otGgl0Bk-Wt9nO9F77u5tvEQ0g.DcihMHbGuW5uIv6IZUJSjoP2szByQX9pdSbXyAblsMog.JPEG.tikibird/profile3.jpg?type=w773")
+                    App.follower_3.add("https://postfiles.pstatic.net/MjAyMTAxMjFfMjA5/MDAxNjExMjA4MDUwMDcy.SDJUgU1xAAepDRjH0fR2muIap-KQ9ef6XFC12j1iQmkg.N5xEx6M8iZLO3usUxOw_37pAzuFd5CXs2Qw2eQKhWwsg.PNG.tikibird/3.png?type=w773")
                     App.follower_3.add(followerInput.text.toString())
                     App.true_3 = 1
                     auth = FirebaseAuth.getInstance()
@@ -311,7 +311,7 @@ class LeaderActivity : AppCompatActivity(){
                     startActivity(intent)
                 }
                 button.setOnClickListener {
-                    App.follower_4.add("https://postfiles.pstatic.net/MjAyMTAxMTlfMjI3/MDAxNjExMDUwNjA3MTcx.XEIHTU4053Uo9mLZQerYSVwZ0PeWMduyy4XA31BGBkcg.E3hLu7EJf7YWz0wCoBB-UTO0sTAMQ4E7XL5VP5vRfYog.JPEG.tikibird/profile2.jpg?type=w773")
+                    App.follower_4.add("https://postfiles.pstatic.net/MjAyMTAxMjFfMTA4/MDAxNjExMjA4MDUwMDY5.zTUj2nuZRy5yViR-axTNUjG5nnOOJwKBSvYN0kdo5RAg.o-CRuJmkdNjFtd_W1SF0VYjvGVhhNiPCCsXl8n24PKQg.PNG.tikibird/2.png?type=w773")
                     App.follower_4.add(followerInput.text.toString())
                     App.true_4 = 1
                     auth = FirebaseAuth.getInstance()
@@ -351,7 +351,7 @@ class LeaderActivity : AppCompatActivity(){
                     startActivity(intent)
                 }
                 button.setOnClickListener {
-                    App.follower_5.add("https://postfiles.pstatic.net/MjAyMTAxMTlfMTc1/MDAxNjExMDUwNjA3MTY4.4zwuetn8XxMVm-DtYni8zYVWRp0DBR9Q-Gr5PgnEAPcg.3MH7b43tBI7U3x__kxSJQO4N8qgaPQjNy1b8F8khhp0g.JPEG.tikibird/profile1.jpg?type=w773")
+                    App.follower_5.add("https://postfiles.pstatic.net/MjAyMTAxMjFfMjA5/MDAxNjExMjA4MDUwMDcy.SDJUgU1xAAepDRjH0fR2muIap-KQ9ef6XFC12j1iQmkg.N5xEx6M8iZLO3usUxOw_37pAzuFd5CXs2Qw2eQKhWwsg.PNG.tikibird/3.png?type=w773")
                     App.follower_5.add(followerInput.text.toString())
                     App.true_5 = 1
                     auth = FirebaseAuth.getInstance()
@@ -390,7 +390,7 @@ class LeaderActivity : AppCompatActivity(){
                     startActivity(intent)
                 }
                 button.setOnClickListener {
-                    App.follower_6.add("https://postfiles.pstatic.net/MjAyMTAxMTlfMjI3/MDAxNjExMDUwNjA3MTcx.XEIHTU4053Uo9mLZQerYSVwZ0PeWMduyy4XA31BGBkcg.E3hLu7EJf7YWz0wCoBB-UTO0sTAMQ4E7XL5VP5vRfYog.JPEG.tikibird/profile2.jpg?type=w773")
+                    App.follower_6.add("https://postfiles.pstatic.net/MjAyMTAxMjFfMjQ2/MDAxNjExMjA4MDUwMDY5.BRIqcLbnswNNNlQE2iTy86UBLz8NprvPCLbRQgk7xx8g.BdO9aJKxhmTRMkoH09KpfmKnGxblLG24j-kT6QWPX9wg.PNG.tikibird/1.png?type=w773")
                     App.follower_6.add(followerInput.text.toString())
                     App.true_6 = 1
                     auth = FirebaseAuth.getInstance()

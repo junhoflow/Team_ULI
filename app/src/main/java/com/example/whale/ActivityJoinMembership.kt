@@ -108,6 +108,8 @@ class ActivityJoinMembership : AppCompatActivity() {
         map["follower5_true"] = 0
         map["follower6_true"] = 0
 
+        map["my_quest_count"] = 0
+
         FirebaseFirestore.getInstance()
             .collection("users")
             .document(setidString)
