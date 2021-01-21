@@ -1,16 +1,16 @@
 package com.example.whale.Adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.whale.App
-import com.example.whale.R
-import com.example.whale.ThingsTodo
+import com.example.whale.*
 import com.google.firebase.firestore.FirebaseFirestore
 import java.lang.Integer.parseInt
 
@@ -37,34 +37,40 @@ class FollowerRvAdapter(val context: Context, val questList: ArrayList<ThingsTod
                 }
                 2 -> {
                     c = App.follower_2[1]
-
                 }
                 3 -> {
                     c = App.follower_3[1]
-
                 }
                 4 -> {
                     c = App.follower_4[1]
-
                 }
                 5 -> {
                     c = App.follower_5[1]
-
                 }
                 6 -> {
                     c = App.follower_6[1]
-
                 }
             }
-            var updatePoint3  = 0
-            var updatePoint2  = 0
-           // App.total_quest_= App.total_quest_ - 1
-            if(parseInt(holder.point1?.text.toString()) != 0) {
-                App.finish_quest_= App.finish_quest_ + 1
-                holder.ingquest?.text =App.total_quest_.toString()
 
-                App.total_point =  App.total_point +parseInt(holder.point1?.text.toString())
+            var b = holder.quest1?.text.toString()
+
+
+            if(parseInt(holder.point1?.text.toString()) != 0) {
+                for(s in  App.questList.indices)
+                {
+                    if(b == App.questList[s] && s != null)
+                    {
+                        App.questList.removeAt(s)
+                        App.pointList.removeAt(s)
+
+                        App.finish_quest_= App.finish_quest_ + 1
+                        holder.ingquest?.text =App.total_quest_.toString()
+
+                        App.total_point =  App.total_point +parseInt(holder.point1?.text.toString())
+                    }
                 }
+
+            }
 
 
             FirebaseFirestore.getInstance()
@@ -82,13 +88,18 @@ class FollowerRvAdapter(val context: Context, val questList: ArrayList<ThingsTod
                 .collection("users")
                 .document(c).update("totalQuest", App.total_quest_)
 
-            var a = holder.point1?.text.toString()
-            var b = holder.quest1?.text.toString()
-//            var point = 0
-//            point += parseInt(a)
-            //퀘스트 삭제
-            //deleteTask("정현", holder.quest1?.text.toString())
+            FirebaseFirestore.getInstance()
+                .collection("users")
+                .document(c).update("pointList", App.pointList)
+
+            FirebaseFirestore.getInstance()
+                .collection("users")
+                .document(c).update("questList", App.questList)
+
             Toast.makeText(context,"퀘스트 ${b}이(가) 선택되었습니다.", Toast.LENGTH_SHORT).show()
+            App.refreshing2++
+            val intent3 = Intent(context, ProfileInfoActivity::class.java)
+            context.startActivity(intent3)
         }
     }
 

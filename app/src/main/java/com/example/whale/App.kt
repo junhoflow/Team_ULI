@@ -45,6 +45,9 @@ class App : Application() {
         var questListFollower = arrayListOf<String>()
         var pointListFollower= arrayListOf<Int>()
 
+        var questList = arrayListOf<String>()
+        var pointList= arrayListOf<Int>()
+
         //팔로워 별 추가됐는지 안됐는지
         var true_1 = 0
         var true_2 = 0

@@ -25,8 +25,9 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_profile_info)
         adding_task.setOnClickListener(this)
 
-        var questList = arrayListOf<String>()
-        var pointList = arrayListOf<Int>()
+//        var questList = arrayListOf<String>()
+//        var pointList = arrayListOf<Int>()
+
         var todoList = arrayListOf<ThingsTodo>()
 
         fun search(string: String)
@@ -38,11 +39,11 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
                 { querySnapshot, firebaseFireStoreException ->
                     var map: Map<String, Any> =
                         querySnapshot?.documents?.first()?.data as Map<String, Any>
-                    questList = map["questList"] as ArrayList<String>
-                    pointList = map["pointList"] as ArrayList<Int>
-                    for(s in pointList.indices)
+                    App.questList = map["questList"] as ArrayList<String>
+                    App.pointList = map["pointList"] as ArrayList<Int>
+                    for(s in App.pointList.indices)
                     {
-                        var thing1 = ThingsTodo(questList[s], pointList[s])
+                        var thing1 = ThingsTodo(App.questList[s], App.pointList[s])
                         todoList.add(thing1)
                     }
                 }
@@ -129,8 +130,8 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
 
                 Toast.makeText(this, "퀘스트를 추가했습니다", Toast.LENGTH_SHORT).show()
                 App.leader_quest++
-                questList.add(editText.text.toString())
-                pointList.add(parseInt(editText2.text.toString()))
+                App.questList.add(editText.text.toString())
+                App.pointList.add(parseInt(editText2.text.toString()))
                 auth = FirebaseAuth.getInstance()
                 val user = auth.currentUser?.email
                 //총 제시한 퀘스트 수 증가하는 코드
@@ -141,12 +142,12 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
                 FirebaseFirestore.getInstance()
                     .collection("users")
                     .document(profile_email.text.toString())
-                    .update("questList", questList)
+                    .update("questList", App.questList)
                 //해당 퀘스트의 포인트 추가되는 코드
                 FirebaseFirestore.getInstance()
                     .collection("users")
                     .document(profile_email.text.toString())
-                    .update("pointList",pointList)
+                    .update("pointList",App.pointList)
                 App.refreshing2 = 3
                 val intent5 = Intent(this, ProfileInfoActivity::class.java)
                 startActivity(intent5)
