@@ -130,6 +130,18 @@ class FollowerActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        button_info.setOnClickListener{
+            val builder = AlertDialog.Builder(this)
+            val dialogView = layoutInflater.inflate(R.layout.whale_point_popup, null)
+            val button2 = dialogView.findViewById<Button>(R.id.whaleinfo_cancel)
+            builder.setView(dialogView).show()
+
+            button2.setOnClickListener{
+                val intent = Intent(this, FollowerActivity::class.java)
+                startActivity(intent)
+            }
+        }
+
     }
 
 
