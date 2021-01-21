@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
@@ -8,128 +7,184 @@
     android:orientation="vertical">
 
 
-<ScrollView
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:layout_weight="1">
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
 
-    <RelativeLayout
+        <RelativeLayout
 
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".MainActivity">
-
-        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="@color/maincolor_blue">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".MainActivity">
 
-            <Button
-                android:id="@+id/button_profile"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_weight="1"
-                android:stateListAnimator="@null"
-                app:backgroundTint="@color/maincolor_blue"
-                app:icon="@drawable/ic_baseline_person_24" />
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="273dp"
-                android:layout_height="70dp"
-                android:layout_weight="1"
-                android:padding="7dp"
-                app:srcCompat="@drawable/whale_follower" />
-
-            <Button
-                android:id="@+id/button_info"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_weight="1"
-                android:stateListAnimator="@null"
-                app:backgroundTint="@color/maincolor_blue"
-                app:icon="@android:drawable/ic_dialog_info" />
-        </LinearLayout>
-
-        <!--겹쳐진거 부터 큰틀 -->
-        <LinearLayout
-            android:layout_width="380dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="70dp"
-            android:orientation="vertical">
-
-            <!--1.겹쳐진 둥근 모서리-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
+                android:background="@color/maincolor_blue">
+
+                <Button
+                    android:id="@+id/button_profile"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_weight="1"
+                    android:stateListAnimator="@null"
+                    app:backgroundTint="@color/maincolor_blue"
+                    app:icon="@drawable/ic_baseline_person_24" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="273dp"
+                    android:layout_height="70dp"
+                    android:layout_weight="1"
+                    android:padding="7dp"
+                    app:srcCompat="@drawable/whale_follower" />
+
+                <Button
+                    android:id="@+id/button_info"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_weight="1"
+                    android:stateListAnimator="@null"
+                    app:backgroundTint="@color/maincolor_blue"
+                    app:icon="@android:drawable/ic_dialog_info" />
+            </LinearLayout>
+
+            <!--겹쳐진거 부터 큰틀 -->
+            <LinearLayout
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:background="@drawable/overlap_shape">
-                <!--1-1.겹처진거 안에 내용-->
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="70dp"
+                android:orientation="vertical">
 
+                <!--1.겹쳐진 둥근 모서리-->
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/overlap_shape">
+                    <!--1-1.겹처진거 안에 내용-->
                     <View
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_weight="1" />
 
-                    <TextView
-                        android:id="@+id/nowtime"
-                        android:layout_width="110dp"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/nowTime"
-                        android:textColor="#000000"
-                        android:textSize="9sp" />
-
                     <LinearLayout
-                        android:layout_width="110dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@color/maincolor_blue">
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1" />
 
                         <TextView
-                            android:layout_width="110dp"
+                            android:id="@+id/nowtime"
+                            android:layout_width="120dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text="총 포인트"
-                            android:textColor="#FFFFFF"
-                            android:textStyle="bold" />
+                            android:text="@string/nowTime"
+                            android:textColor="#000000"
+                            android:textSize="9sp" />
+
+                        <LinearLayout
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:background="@color/maincolor_blue">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="바다로 보낸 고래"
+                                android:textColor="#FFFFFF"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/whalebye_count"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:text="2"
+                                android:textColor="@color/maincolor_blue"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="left"
+                                android:text="마리"
+                                android:textColor="@color/maincolor_blue"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1" />
+
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:orientation="horizontal">
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="15dp"
+                        android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/txt_totalPoint"
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1" />
+
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:gravity="right"
-                            android:text="7000"
-                            android:textColor="@color/maincolor_blue"
-                            android:textSize="24sp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/username_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/username"
+                                android:textColor="#000000"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="님,"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="오늘의 포인트 리스트를 달성하고"
                             android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:gravity="left"
-                            android:text="P"
-                            android:textColor="@color/maincolor_blue"
-                            android:textSize="24sp"
+                            android:text="칭찬고래를 키워보세요!"
                             android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1" />
                     </LinearLayout>
 
                     <View
@@ -140,138 +195,208 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    android:layout_marginLeft="15dp"
-                    android:orientation="vertical">
+                    android:layout_width="match_parent"
+                    android:layout_height="117dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/allpoint_bg">
 
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:layout_weight="1" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:layout_height="89dp"
+                        android:layout_margin="20dp">
 
-                        <TextView
-                            android:id="@+id/username_2"
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1" />
+
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/username"
-                            android:textColor="#000000"
-                            android:textStyle="bold" />
+                            android:layout_marginRight="65dp"
+                            android:gravity="center"
+                            android:orientation="vertical">
 
-                        <TextView
+                            <LinearLayout
+                                android:layout_width="120dp"
+                                android:layout_height="50dp"
+                                android:background="@drawable/point_bg"
+                                android:orientation="horizontal">
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:id="@+id/txt_totalPoint"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text="4500"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="27sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="P"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="27sp"
+                                    android:textStyle="bold" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="총 포인트"
+                                android:textColor="#4E4E4E"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="님,"
-                            android:textStyle="bold" />
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="120dp"
+                                android:layout_height="50dp"
+                                android:background="@drawable/point_bg">
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:id="@+id/myquest_count"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text="4"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="27sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="건 완료"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="나만의 퀘스트"
+                                android:textColor="#505050"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1" />
                     </LinearLayout>
+                </LinearLayout>
+                <!--2.칭찬고래-->
+                <RelativeLayout
+                    android:id="@+id/whale_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="270dp"
+                    android:layout_marginTop="5dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/txt_title_whale"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="오늘의 포인트 리스트를 달성하고"
+                        android:fontFamily="sans-serif"
+                        android:text="► 칭찬고래"
+                        android:textSize="14sp"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="칭찬고래를 키워보세요!"
-                        android:textStyle="bold" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/tank_background" />
 
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:layout_weight="1" />
+                    <ImageView
+                        android:id="@+id/gif"
+                        android:layout_width="380dp"
+                        android:layout_height="250dp"
+                        android:layout_marginTop="20dp" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:orientation="vertical">
+
+                    <ProgressBar
+                        android:id="@+id/progress"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="12dp"
+                        android:layout_marginTop="10dp"
+                        android:max="5"
+                        android:progress="1"
+                        android:progressDrawable="@drawable/progressbar_bg" />
+
                 </LinearLayout>
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
+                <!--3.포인트리스트-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="282dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txt_title_ptlist"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="► 포인트리스트"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/PointListRV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
-            <!--2.칭찬고래-->
-            <RelativeLayout
-                android:id="@+id/whale_layout"
-                android:layout_width="match_parent"
-                android:layout_height="270dp"
-                android:layout_marginTop="5dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/txt_title_whale"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:text="► 칭찬고래"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/tank_background" />
-
-                <ImageView
-                    android:id="@+id/gif"
-                    android:layout_width="380dp"
-                    android:layout_height="250dp"
-                    android:layout_marginTop="20dp" />
-
-            </RelativeLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:orientation="vertical">
-                <ProgressBar
-                    android:id="@+id/progress"
-                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="12dp"
-                    android:layout_marginTop="10dp"
-                    android:max="5"
-                    android:progress="1"
-                    android:progressDrawable="@drawable/progressbar_bg" />
-
-            </LinearLayout>
-
-            <!--3.포인트리스트-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="282dp"
-                android:layout_marginTop="5dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/txt_title_ptlist"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="► 포인트리스트"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/PointListRV"
-                    android:layout_width="wrap_content"
-                    android:layout_height="160dp"
-                    android:layout_gravity="center_horizontal" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </RelativeLayout>
-</ScrollView>
+        </RelativeLayout>
+    </ScrollView>
 
     <Button
         android:id="@+id/selfquest_btn"

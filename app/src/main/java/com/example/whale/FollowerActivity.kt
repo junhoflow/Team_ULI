@@ -106,6 +106,8 @@ class FollowerActivity : AppCompatActivity() {
         PointListRV.setHasFixedSize(false)
 
         txt_totalPoint.text = App.point.toString()
+        whalebye_count.text = App.whaleBye.toString()
+        myquest_count.text = App.my_quest_count.toString()
 
         when {
             App.point <= 1001 -> {
