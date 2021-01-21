@@ -62,6 +62,14 @@ class FollowerRvAdapter(val context: Context, val questList: ArrayList<ThingsTod
             App.finish_quest_= App.finish_quest_ + 1
             holder.ingquest?.text =App.total_quest_.toString()
 
+            App.total_point =  App.total_point +parseInt(holder.point1?.text.toString())
+
+            FirebaseFirestore.getInstance()
+                .collection("users")
+                .document(c)
+                .update("point", App.total_point)
+
+
 
             FirebaseFirestore.getInstance()
                 .collection("users")

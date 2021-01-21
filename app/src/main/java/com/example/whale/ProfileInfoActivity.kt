@@ -96,6 +96,7 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
                 App.name3 = map["nickname"].toString()
                 App.finish_quest_ = parseInt(map["finishQuest"].toString())
                 App.total_quest_ = parseInt(map["totalQuest"].toString())
+                App.total_point = parseInt(map["point"].toString())
             }
 
         ing_quest.text = (App.total_quest_-App.finish_quest_).toString()

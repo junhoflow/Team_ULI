@@ -6,7 +6,7 @@ class App : Application() {
     companion object {
         var addingfriend: Int = 0
         var leader_quest = 0
-
+        var total_point = 0
         var total_quest_ = 0
         var finish_quest_ = 0
         var total_quest1 = 0
