@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
@@ -61,7 +61,7 @@
 
         <LinearLayout
             android:layout_width="380dp"
-            android:layout_height="wrap_content"
+            android:layout_height="700dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="70dp"
@@ -1011,57 +1011,39 @@
                                         android:layout_width="0dp"
                                         android:layout_height="0dp"
                                         android:layout_weight="1" />
-
-
                                 </LinearLayout>
-
                             </LinearLayout>
-
                         </LinearLayout>
 
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
-                            android:layout_weight="1" />
-
                     </LinearLayout>
+
                 </LinearLayout>
 
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <com.github.mikephil.charting.charts.BarChart
-                        android:id="@+id/chart"
-                        android:layout_width="match_parent"
-                        android:layout_height="240dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginBottom="16dp" />
-
-                </LinearLayout>
-
-            </LinearLayout>
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="6명 이상의 Follower 형성,\n 그룹 만들기 기능을 사용해보세요!"
+                android:textStyle="bold"
+                android:textSize="9dp"
+                android:textColor="@color/white"/>
+            <Button
+                android:layout_width="340dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:text="프로버전 결제하기"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:background="@drawable/round_rectangle_hollow"
+                app:backgroundTint="#fdb813" />
 
         </LinearLayout>
 
 
     </RelativeLayout>
-</ScrollView>
+</LinearLayout>
