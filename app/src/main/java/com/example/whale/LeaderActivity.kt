@@ -428,6 +428,17 @@ class LeaderActivity : AppCompatActivity(){
 
         queryObserveDataforadd()
 
+        btn_chart.setOnClickListener{
+            val builder = AlertDialog.Builder(this)
+            val dialogView = layoutInflater.inflate(R.layout.graph_popup, null)
+            val button = dialogView.findViewById<Button>(R.id.cancel_btn2)
+            builder.setView(dialogView).show()
+
+            button.setOnClickListener{
+                val intent = Intent(this, LeaderActivity::class.java)
+                startActivity(intent)
+            }
+        }
 
         btn_person.setOnClickListener{
             val intent = Intent(this, ProfileActivity::class.java)

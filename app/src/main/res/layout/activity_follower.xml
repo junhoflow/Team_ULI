@@ -411,8 +411,8 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/selfquest_bg"
         android:text="나만의 퀘스트 만들기"
-        android:textSize="18sp"
+        android:textSize="19sp"
         android:textStyle="bold"
-        app:backgroundTint="#ffd966" />
+        app:backgroundTint="#FFC107" />
 
 </LinearLayout>

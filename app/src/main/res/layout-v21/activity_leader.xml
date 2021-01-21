@@ -49,13 +49,14 @@
                 android:layout_weight="1" />
 
             <Button
-                android:id="@+id/btn_home"
+                android:id="@+id/btn_chart"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_weight="1"
                 android:stateListAnimator="@null"
                 app:backgroundTint="#FFFFFF"
-                app:icon="@drawable/ic_baseline_home_24"
+                android:layout_marginRight="20dp"
+                app:icon="@drawable/ic_baseline_bar_chart_24"
                 app:iconTint="#51000000" />
         </LinearLayout>
 
