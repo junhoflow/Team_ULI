@@ -61,7 +61,7 @@ class FollowerActivity : AppCompatActivity() {
                     FirebaseFirestore.getInstance()
                         .collection("users")
                         .document(user.toString()).update("whaleBye", App.whaleBye)
-                    App.point = 0
+                    App.point = App.point - 10000
                     auth = FirebaseAuth.getInstance()
                     val user2 = auth.currentUser?.email
                     FirebaseFirestore.getInstance()

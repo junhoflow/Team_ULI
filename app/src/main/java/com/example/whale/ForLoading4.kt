@@ -16,8 +16,6 @@ class ForLoading4 : AppCompatActivity() {
         val intent = Intent(this, ProfileInfoActivity::class.java)
         startActivity(intent)
 
-
         finish()
-
     }
 }

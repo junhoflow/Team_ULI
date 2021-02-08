@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.whale.*
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
 import java.lang.Integer.parseInt
 
@@ -67,9 +68,9 @@ class FollowerRvAdapter(val context: Context, val questList: ArrayList<ThingsTod
                         holder.ingquest?.text =App.total_quest_.toString()
 
                         App.total_point =  App.total_point +parseInt(holder.point1?.text.toString())
+                        break
                     }
                 }
-
             }
 
 
@@ -98,7 +99,7 @@ class FollowerRvAdapter(val context: Context, val questList: ArrayList<ThingsTod
 
             Toast.makeText(context,"퀘스트 ${b}이(가) 선택되었습니다.", Toast.LENGTH_SHORT).show()
             App.refreshing2++
-            val intent3 = Intent(context, ProfileInfoActivity::class.java)
+            val intent3 = Intent(context, ForLoading4::class.java)
             context.startActivity(intent3)
         }
     }
@@ -116,5 +117,6 @@ class FollowerRvAdapter(val context: Context, val questList: ArrayList<ThingsTod
             point1?.text = toDo.point.toString()
         }
     }
+
 
 }

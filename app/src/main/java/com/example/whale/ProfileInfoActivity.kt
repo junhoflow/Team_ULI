@@ -82,6 +82,10 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
         recycler_view.layoutManager = lm
         recycler_view.setHasFixedSize(false)
 
+
+
+
+
         FirebaseFirestore.getInstance()
             .collection("users")
             .whereEqualTo("id", profile_email.text)
@@ -89,6 +93,8 @@ class ProfileInfoActivity : AppCompatActivity(), View.OnClickListener {
             { querySnapshot, firebaseFireStoreException ->
                 var map: Map<String, Any> =
                     querySnapshot?.documents?.first()?.data as Map<String, Any>
+                App.questList = map["questList"] as ArrayList<String>
+                App.pointList = map["pointList"] as ArrayList<Int>
                 App.name3 = map["nickname"].toString()
                 App.finish_quest_ = parseInt(map["finishQuest"].toString())
                 App.total_quest_ = parseInt(map["totalQuest"].toString())
